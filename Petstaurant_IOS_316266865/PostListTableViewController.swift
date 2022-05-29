@@ -33,12 +33,12 @@ class PostListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         row = indexPath.row
-        performSegue(withIdentifier: "openStudentDetails", sender: self)
+        performSegue(withIdentifier: "openPostDetails", sender: self)
     }
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "openStudentDetails"{
+        if segue.identifier == "openPostDetails"{
             let detailViewController = segue.destination as? DetailViewController
             let postByRow = Model.instance.postList[row]
             detailViewController?.post = postByRow

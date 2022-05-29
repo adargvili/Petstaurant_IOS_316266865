@@ -24,7 +24,7 @@
                                     <rect key="frame" x="44" y="0.0" width="286" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studentAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="abW-Xg-9ca">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="abW-Xg-9ca">
                                             <rect key="frame" x="5" y="5" width="85" height="86"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="85" id="Fo5-CO-1cq"/>
@@ -80,7 +80,7 @@
                         <barButtonItem key="backBarButtonItem" title="Posts" id="LXL-AT-kjZ"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="CXJ-zj-A2S" kind="show" identifier="openStudentDetails" id="8S5-ZW-xeI"/>
+                        <segue destination="CXJ-zj-A2S" kind="show" identifier="openPostDetails" id="8S5-ZW-xeI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMi-2c-myt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,8 +191,8 @@
                     <navigationItem key="navigationItem" id="lFp-WT-OQF"/>
                     <connections>
                         <outlet property="containerView" destination="Gi8-i3-Ufp" id="XIo-uW-Wex"/>
-                        <segue destination="gk0-um-e6t" kind="custom" identifier="studentListSegue" customClass="MySegue" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" id="M7a-Im-gZO"/>
-                        <segue destination="MBd-Dn-dFR" kind="custom" identifier="addStudentSegue" customClass="MySegue" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" id="OMd-Ct-iiH"/>
+                        <segue destination="gk0-um-e6t" kind="custom" identifier="postListSegue" customClass="MySegue" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" id="M7a-Im-gZO"/>
+                        <segue destination="MBd-Dn-dFR" kind="custom" identifier="addPostSegue" customClass="MySegue" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" id="OMd-Ct-iiH"/>
                         <segue destination="yg0-NT-a4X" kind="custom" identifier="aboutSegue" customClass="MySegue" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" id="1QC-LW-0r5"/>
                     </connections>
                 </viewController>
@@ -247,7 +247,7 @@
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studentAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Se-Z7y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Se-Z7y">
                                 <rect key="frame" x="64" y="44" width="900" height="215"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="215" id="aYb-ZS-Suv"/>
@@ -327,7 +327,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="575"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studentAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-HF-V9S">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-HF-V9S">
                                 <rect key="frame" x="44" y="44" width="899.5" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="3HC-TF-QeU"/>
@@ -464,7 +464,7 @@
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="studentAvatar" width="900" height="520"/>
+        <image name="userAvatar" width="900" height="520"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

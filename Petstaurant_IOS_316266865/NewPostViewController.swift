@@ -17,7 +17,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate {
         Model.instance.addPostToList(post: post)
         let viewController = self.navigationController?.parent as! ViewController
         viewController.removeSubViews()
-        viewController.performSegue(withIdentifier: "studentListSegue", sender: self)
+        viewController.performSegue(withIdentifier: "postListSegue", sender: self)
     }
     @IBAction func xBtn(_ sender: UIButton) {
         idInput.text = ""
