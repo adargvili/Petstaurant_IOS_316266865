@@ -7,13 +7,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController , MySegueProtocol {
+    
+    @IBAction func aboutBtn(_ sender: UIButton) {
+        removeSubViews()
+        performSegue(withIdentifier: "aboutSegue", sender: self)
+    }
+    @IBAction func addBtn(_ sender: UIButton) {
+        removeSubViews()
+        performSegue(withIdentifier: "addStudentSegue", sender: self)
+    }
+    @IBAction func listBtn(_ sender: UIButton) {
+        removeSubViews()
+        performSegue(withIdentifier: "studentListSegue", sender: self)
+    }
+    func getViewContainer(identifier: String) -> UIView {
+        return containerView
+    }
+    
+    @IBOutlet weak var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        performSegue(withIdentifier: "studentListSegue", sender: self)
     }
-
+    
+    func removeSubViews(){
+        for v in containerView.subviews{
+            v.removeFromSuperview()
+        }
+    }
 
 }
 
