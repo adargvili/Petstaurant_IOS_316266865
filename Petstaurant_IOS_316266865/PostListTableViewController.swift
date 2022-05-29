@@ -41,7 +41,7 @@ class PostListTableViewController: UITableViewController {
         if segue.identifier == "openStudentDetails"{
             let detailViewController = segue.destination as? DetailViewController
             let postByRow = Model.instance.postList[row]
-            detailViewController?.student = postByRow
+            detailViewController?.post = postByRow
         }
     }
 

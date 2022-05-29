@@ -9,10 +9,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var student:Post?{
+    var post:Post?{
         didSet{
-            if postTitleLabel != nil{postTitleLabel.text = student?.postTitle}
-            if idLabel != nil {idLabel.text = student?.postDescription}
+            if postTitleLabel != nil{postTitleLabel.text = post?.postTitle}
+            if idLabel != nil {idLabel.text = post?.postDescription}
         }
     }
 
@@ -24,8 +24,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         avatar.layer.cornerRadius=40
         avatar.clipsToBounds=true
-        idLabel.text = student?.postDescription
-        postTitleLabel.text = student?.postTitle
+        idLabel.text = post?.postDescription
+        postTitleLabel.text = post?.postTitle
         
     }
     
