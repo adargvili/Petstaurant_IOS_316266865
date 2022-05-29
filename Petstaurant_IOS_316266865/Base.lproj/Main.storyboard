@@ -77,7 +77,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Feed" id="ImN-6t-ufY">
-                        <barButtonItem key="backBarButtonItem" title="Students" id="LXL-AT-kjZ"/>
+                        <barButtonItem key="backBarButtonItem" title="Posts" id="LXL-AT-kjZ"/>
                     </navigationItem>
                     <connections>
                         <segue destination="CXJ-zj-A2S" kind="show" identifier="openStudentDetails" id="8S5-ZW-xeI"/>
@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="368.97321428571428" y="218.84057971014494"/>
         </scene>
-        <!--Student Detail-->
+        <!--Post Detail-->
         <scene sceneID="0qV-sT-nRY">
             <objects>
-                <viewController title="Student Detail" id="CXJ-zj-A2S" customClass="DetailViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Post Detail" id="CXJ-zj-A2S" customClass="DetailViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Km3-X7-FlL">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="694"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,10 +319,10 @@
             </objects>
             <point key="canvasLocation" x="1932" y="962"/>
         </scene>
-        <!--Add New Student-->
+        <!--Add New Post-->
         <scene sceneID="nc6-lL-q1J">
             <objects>
-                <viewController title="Add New Student" id="S29-48-NuX" customClass="NewPostViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add New Post" id="S29-48-NuX" customClass="NewPostViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kbk-Ma-7Zj">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="575"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,7 +415,7 @@
                             <constraint firstItem="d65-72-l0a" firstAttribute="leading" secondItem="rqc-gC-EVI" secondAttribute="leading" constant="5" id="wjr-cn-kS2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a New Student" id="AsV-UL-tI7"/>
+                    <navigationItem key="navigationItem" title="Add a New Post" id="AsV-UL-tI7"/>
                     <size key="freeformSize" width="374" height="575"/>
                     <connections>
                         <outlet property="idInput" destination="d65-72-l0a" id="gsF-CE-3eN"/>

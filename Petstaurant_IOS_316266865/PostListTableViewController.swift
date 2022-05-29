@@ -1,5 +1,5 @@
 //
-//  StudentListTableViewController.swift
+//  PostListTableViewController.swift
 //  Petstaurant_IOS_316266865
 //
 //  Created by Dror Bank on 29/05/2022.
@@ -40,8 +40,8 @@ class PostListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openStudentDetails"{
             let detailViewController = segue.destination as? DetailViewController
-            let studentByRow = Model.instance.postList[row]
-            detailViewController?.student = studentByRow
+            let postByRow = Model.instance.postList[row]
+            detailViewController?.student = postByRow
         }
     }
 
