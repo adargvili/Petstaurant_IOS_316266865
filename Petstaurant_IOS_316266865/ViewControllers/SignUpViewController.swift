@@ -32,6 +32,8 @@ class SignUpViewController: UIViewController {
         
         if !Model.instance.validateEmptyFields(fields: fields){errorLabel.text = "At least one of the fields is empty";return;}
         
+        if !Model.instance.validateEmail(email: emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Email is not valid";return;}
+        
         if !Model.instance.validatePassword(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character";return;}
         
         if !Model.instance.validatePasswordWithPasswordConfirm(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), passwordConfirm: confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Password are not matched";return;}
