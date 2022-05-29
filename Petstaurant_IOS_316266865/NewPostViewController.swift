@@ -13,8 +13,8 @@ class NewPostViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var postDescriptionInput: UITextField!
     @IBOutlet weak var postTitleInput: UITextField!
     @IBAction func saveBtn(_ sender: UIButton) {
-        let post = Post(postId:"",postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
-        Model.instance.addPostToList(post: post)
+        let post = Post(postId:"1233444444444",postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
+        Model.instance.addPostToList(post: post){}
         let viewController = self.navigationController?.parent as! ViewController
         viewController.removeSubViews()
         viewController.performSegue(withIdentifier: "postListSegue", sender: self)

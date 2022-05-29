@@ -8,7 +8,7 @@
 import Foundation
 
 class Post{
-    public var postId: String? = ""
+    public var id: String? = ""
     public var postTitle: String? = ""
     public var postDescription: String? = ""
     public var postImage: String? = ""
@@ -16,7 +16,7 @@ class Post{
     init(){}
     
     init(postId:String,postDescription:String,postTitle:String,postImage:String){
-        self.postId = postId
+        self.id = postId
         self.postDescription = postDescription
         self.postTitle = postTitle
         self.postImage = postImage
@@ -28,7 +28,7 @@ class Post{
 extension Post{
     static func FromJson(json:[String:Any])->Post{
         let s = Post()
-        s.postId = json["id"] as? String
+        s.id = json["id"] as? String
         s.postTitle = json["title"] as? String
         s.postDescription = json["description"] as? String
         s.postImage = json["image"] as? String
@@ -37,7 +37,7 @@ extension Post{
     
     func toJson()->[String:Any]{
         var json = [String:Any]()
-        json["id"] = self.postId!
+        json["id"] = self.id!
         json["title"] = self.postTitle!
         json["description"] = self.postDescription!
         json["image"] = self.postImage!

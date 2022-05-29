@@ -8,7 +8,7 @@
 import Foundation
 
 class Model{
-    
+    let firebaseModel = ModelFirebase()
     static let instance = Model()
     var postList = [Post]()
     
@@ -16,7 +16,9 @@ class Model{
         postList.append(Post(postId: "",postDescription: "111111111", postTitle: "adarTest1",postImage: ""))
     }
     
-    func addPostToList(post:Post){
-        postList.append(post)
+    func addPostToList(post:Post, completion: @escaping ()->Void){
+        firebaseModel.addPostToList(post: post){
+            completion()
+        }
     }
 }
