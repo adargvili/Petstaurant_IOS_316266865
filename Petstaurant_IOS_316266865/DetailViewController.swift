@@ -12,19 +12,19 @@ class DetailViewController: UIViewController {
     var post:Post?{
         didSet{
             if postTitleLabel != nil{postTitleLabel.text = post?.postTitle}
-            if titleDescriptionLabel != nil {titleDescriptionLabel.text = post?.postDescription}
+            if postDescriptionLabel != nil {postDescriptionLabel.text = post?.postDescription}
         }
     }
 
     @IBOutlet weak var navBtn: UINavigationItem!
     @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var titleDescriptionLabel: UILabel!
+    @IBOutlet weak var postDescriptionLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         avatar.layer.cornerRadius=40
         avatar.clipsToBounds=true
-        titleDescriptionLabel.text = post?.postDescription
+        postDescriptionLabel.text = post?.postDescription
         postTitleLabel.text = post?.postTitle
         
     }

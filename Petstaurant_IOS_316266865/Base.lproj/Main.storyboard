@@ -66,8 +66,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarImage" destination="abW-Xg-9ca" id="URX-GI-fcb"/>
+                                    <outlet property="postDescriptionLabel" destination="VCg-kO-Tak" id="tz0-U1-5y5"/>
                                     <outlet property="postTitleLabel" destination="4y3-G4-d0K" id="7pM-my-bom"/>
-                                    <outlet property="titleDescriptionLabel" destination="VCg-kO-Tak" id="tz0-U1-5y5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,14 +109,14 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-i3-Ufp">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-i3-Ufp">
                                 <rect key="frame" x="64" y="44" width="768" height="295"/>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ze-dQI">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ze-dQI">
                                 <rect key="frame" x="64" y="325" width="768" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14N-4J-af3" userLabel="homeButton">
@@ -133,7 +133,7 @@
                                             <action selector="listBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xtd-LG-IgY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkK-Kj-DQo" userLabel="aboutButton">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkK-Kj-DQo" userLabel="aboutButton">
                                         <rect key="frame" x="682" y="11" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="6QD-nB-AxE"/>
@@ -158,7 +158,7 @@
                                     <constraint firstItem="LkK-Kj-DQo" firstAttribute="top" secondItem="q5y-Ze-dQI" secondAttribute="top" constant="11" id="psA-pj-QdH"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPW-kb-2lu" userLabel="addButton">
+                            <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPW-kb-2lu" userLabel="addButton">
                                 <rect key="frame" x="407.5" y="283" width="81" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6gF-s6-8ye"/>
@@ -293,8 +293,8 @@
                     <connections>
                         <outlet property="avatar" destination="SDl-Se-Z7y" id="MJX-WK-Fsh"/>
                         <outlet property="navBtn" destination="fwn-dT-QLZ" id="Oeg-BO-FnI"/>
+                        <outlet property="postDescriptionLabel" destination="wG4-WL-SKg" id="Pws-Wz-VVQ"/>
                         <outlet property="postTitleLabel" destination="pcK-lQ-BcF" id="hl4-fF-axy"/>
-                        <outlet property="titleDescriptionLabel" destination="wG4-WL-SKg" id="Pws-Wz-VVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udr-0U-IvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -418,7 +418,7 @@
                     <navigationItem key="navigationItem" title="Add a New Post" id="AsV-UL-tI7"/>
                     <size key="freeformSize" width="374" height="575"/>
                     <connections>
-                        <outlet property="idInput" destination="d65-72-l0a" id="gsF-CE-3eN"/>
+                        <outlet property="postDescriptionInput" destination="d65-72-l0a" id="gsF-CE-3eN"/>
                         <outlet property="postTitleInput" destination="afE-Af-3Bm" id="MJb-hO-5hR"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="viewControllerSegue" id="Yqu-Pc-z1J"/>
                     </connections>
