@@ -9,12 +9,12 @@ import UIKit
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var postTitleLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var titleDescriptionLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     
     var id = ""{
         didSet{
-            if idLabel != nil{idLabel.text = id}
+            if titleDescriptionLabel != nil{titleDescriptionLabel.text = id}
         }
     }
     
@@ -31,7 +31,7 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         postTitleLabel.text = postTitle
-        idLabel.text = id
+        titleDescriptionLabel.text = id
         
     }
 
