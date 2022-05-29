@@ -292,7 +292,7 @@
                     <size key="freeformSize" width="374" height="694"/>
                     <connections>
                         <outlet property="avatar" destination="SDl-Se-Z7y" id="MJX-WK-Fsh"/>
-			<outlet property="idLabel" destination="wG4-WL-SKg" id="Pws-Wz-VVQ"/>
+                        <outlet property="idLabel" destination="wG4-WL-SKg" id="Pws-Wz-VVQ"/>
                         <outlet property="navBtn" destination="fwn-dT-QLZ" id="Oeg-BO-FnI"/>
                         <outlet property="postTitleLabel" destination="pcK-lQ-BcF" id="hl4-fF-axy"/>
                     </connections>
@@ -305,7 +305,7 @@
         <scene sceneID="mpb-yd-Ssb">
             <objects>
                 <viewController title="About" id="4Rv-iU-hv8" customClass="AboutViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
-                    <label key="view" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is adar's student list app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="Mvj-fT-cks">
+                    <label key="view" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is Petstaurant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="Mvj-fT-cks">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="694"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -328,7 +328,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studentAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-HF-V9S">
-                                <rect key="frame" x="44" y="44" width="279" height="196"/>
+                                <rect key="frame" x="44" y="44" width="899.5" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="3HC-TF-QeU"/>
                                     <constraint firstAttribute="height" constant="196" id="MA9-Qa-KHd"/>
@@ -336,7 +336,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="afE-Af-3Bm">
-                                <rect key="frame" x="49" y="260" width="276" height="50"/>
+                                <rect key="frame" x="49" y="260" width="889.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qJF-r1-SQE"/>
                                 </constraints>
@@ -351,7 +351,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d65-72-l0a" userLabel="ID input">
-                                <rect key="frame" x="49" y="318" width="276" height="50"/>
+                                <rect key="frame" x="49" y="318" width="889.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JdP-mI-vbW"/>
                                 </constraints>

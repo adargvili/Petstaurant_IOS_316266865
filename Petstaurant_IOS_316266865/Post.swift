@@ -10,10 +10,10 @@ import Foundation
 class Post{
     
     var postTitle=""
-    var studentID=""
+    var postDescription=""
     
-    init(studentId:String,postTitle:String){
-        self.studentID = studentId
+    init(postDescription:String,postTitle:String){
+        self.postDescription = postDescription
         self.postTitle = postTitle
     }
     

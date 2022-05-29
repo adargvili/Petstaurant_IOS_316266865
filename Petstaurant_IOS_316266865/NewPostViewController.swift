@@ -13,7 +13,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var idInput: UITextField!
     @IBOutlet weak var postTitleInput: UITextField!
     @IBAction func saveBtn(_ sender: UIButton) {
-        let post = Post(studentId: idInput.text!, postTitle: postTitleInput.text!)
+        let post = Post(postDescription: idInput.text!, postTitle: postTitleInput.text!)
         Model.instance.addPostToList(post: post)
         let viewController = self.navigationController?.parent as! ViewController
         viewController.removeSubViews()
