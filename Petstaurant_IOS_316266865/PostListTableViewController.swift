@@ -9,23 +9,34 @@ import UIKit
 
 class PostListTableViewController: UITableViewController {
     
+    var posts = [Post]()
+    
+    func reload(){
+        Model.instance.getAllPosts(){
+            posts in
+            self.posts = posts
+            self.tableView.reloadData()
+        }
+    }
+    
     var row = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        reload()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Model.instance.postList.count
+        return posts.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
-        postCell?.postDescription = Model.instance.postList[indexPath.row].postDescription ?? ""
-        postCell?.postTitle = Model.instance.postList[indexPath.row].postTitle ?? ""
+        postCell?.postDescription = posts[indexPath.row].postDescription ?? ""
+        postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
 
         return postCell!
     }
@@ -40,7 +51,7 @@ class PostListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openPostDetails"{
             let detailViewController = segue.destination as? DetailViewController
-            let postByRow = Model.instance.postList[row]
+            let postByRow = posts[row]
             detailViewController?.post = postByRow
         }
     }

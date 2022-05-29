@@ -36,7 +36,7 @@ class ModelFirebase{
     }
     
     func addPostToList(post:Post, completion:@escaping ()->Void){
-        db.collection("Post").document(post.id!).setData(
+        db.collection("Posts").document(post.id!).setData(
             post.toJson())
         { err in
             if let err = err {

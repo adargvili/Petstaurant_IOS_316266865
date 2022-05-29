@@ -13,7 +13,7 @@ class Model{
     var postList = [Post]()
     
     private init(){
-        postList.append(Post(postId: "",postDescription: "111111111", postTitle: "adarTest1",postImage: ""))
+       
     }
     
     func addPostToList(post:Post, completion: @escaping ()->Void){
@@ -21,4 +21,18 @@ class Model{
             completion()
         }
     }
+    
+    func getAllPosts(completion:@escaping ([Post])->Void){
+        return firebaseModel.getAllPosts(completion: completion)
+    }
+    
+    func getPost(byId:String)->Post?{
+        return firebaseModel.getPost(byId: byId)
+    }
+    
+    func delete(post:Post){
+        firebaseModel.delete(post: post)
+    }
+    
+    
 }
