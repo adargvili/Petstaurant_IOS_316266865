@@ -8,7 +8,14 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var NameTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+   
+    @IBOutlet weak var signUpBtn: UIButton!
     
+    @IBOutlet weak var errorLabel: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -565,6 +565,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K10-1n-GGr"/>
+                    <connections>
+                        <outlet property="EmailTextField" destination="KKw-Ri-xkE" id="5k2-xm-cM4"/>
+                        <outlet property="NameTextField" destination="KGc-sc-Bx5" id="vg4-mY-46w"/>
+                        <outlet property="PasswordTextField" destination="O1u-vC-hgc" id="scR-z7-rfr"/>
+                        <outlet property="confirmPasswordTextField" destination="0MO-9I-CkC" id="LTQ-vK-ljl"/>
+                        <outlet property="errorLabel" destination="hOR-5h-Now" id="rtE-VC-59A"/>
+                        <outlet property="signUpBtn" destination="fIV-wk-hdK" id="idR-Cd-j93"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57Y-gK-Xap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,7 +621,7 @@
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-7t-Dae">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-7t-Dae">
                                         <rect key="frame" x="0.0" y="210" width="334" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -636,6 +644,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zGb-pc-icW"/>
+                    <connections>
+                        <outlet property="emailLoginTextField" destination="0M2-EP-q4F" id="3ZT-6q-iYX"/>
+                        <outlet property="emailTextField" destination="0M2-EP-q4F" id="e1B-oy-MyD"/>
+                        <outlet property="errorLoginBtn" destination="5m9-7t-Dae" id="1Tq-lc-D23"/>
+                        <outlet property="loginBtn" destination="UZq-EU-G3s" id="Xmt-Wx-DVc"/>
+                        <outlet property="passwordLoginTextFIeld" destination="s73-9R-cbn" id="Pn4-54-6u2"/>
+                        <outlet property="passwordTextField" destination="s73-9R-cbn" id="Ebo-Vz-y31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWz-ER-mbj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
