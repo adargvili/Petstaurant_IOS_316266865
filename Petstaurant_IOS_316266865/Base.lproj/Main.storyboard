@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Student List-->
+        <!--Feed-->
         <scene sceneID="V6d-1b-9WE">
             <objects>
-                <tableViewController title="Student List" id="Nff-98-e2e" customClass="PostListTableViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Feed" id="Nff-98-e2e" customClass="PostListTableViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6kD-56-eo7">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="694"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" rowHeight="96" id="la6-wx-Wsl" customClass="PostTableViewCell" customModule="Petstaurant_IOS_316266865" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="96" id="la6-wx-Wsl" customClass="PostTableViewCell" customModule="Petstaurant_IOS_316266865" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="374" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="la6-wx-Wsl" id="NHz-yb-1ra">
@@ -109,14 +109,14 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-i3-Ufp">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-i3-Ufp">
                                 <rect key="frame" x="64" y="44" width="768" height="295"/>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ze-dQI">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ze-dQI">
                                 <rect key="frame" x="64" y="325" width="768" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14N-4J-af3" userLabel="homeButton">
@@ -133,7 +133,7 @@
                                             <action selector="listBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xtd-LG-IgY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkK-Kj-DQo" userLabel="aboutButton">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkK-Kj-DQo" userLabel="aboutButton">
                                         <rect key="frame" x="682" y="11" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="6QD-nB-AxE"/>
@@ -158,7 +158,7 @@
                                     <constraint firstItem="LkK-Kj-DQo" firstAttribute="top" secondItem="q5y-Ze-dQI" secondAttribute="top" constant="11" id="psA-pj-QdH"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPW-kb-2lu" userLabel="addButton">
+                            <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPW-kb-2lu" userLabel="addButton">
                                 <rect key="frame" x="407.5" y="283" width="81" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6gF-s6-8ye"/>
@@ -242,20 +242,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="bla bla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-lQ-BcF">
-                                <rect key="frame" x="121" y="280" width="185" height="33"/>
+                                <rect key="frame" x="121" y="280" width="839" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studentAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Se-Z7y">
-                                <rect key="frame" x="64" y="44" width="246" height="215"/>
+                                <rect key="frame" x="64" y="44" width="900" height="215"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="215" id="aYb-ZS-Suv"/>
                                     <constraint firstAttribute="width" constant="334" id="w49-ue-6ao"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="bla bla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-WL-SKg">
-                                <rect key="frame" x="206.5" y="333" width="99.5" height="33"/>
+                                <rect key="frame" x="206.5" y="333" width="753.5" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>

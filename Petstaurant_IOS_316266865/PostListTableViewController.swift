@@ -23,11 +23,11 @@ class PostListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let studentCell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath) as? PostTableViewCell
-        studentCell?.id = Model.instance.postList[indexPath.row].postDescription
-        studentCell?.postTitle = Model.instance.postList[indexPath.row].postTitle
+        let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
+        postCell?.id = Model.instance.postList[indexPath.row].postDescription
+        postCell?.postTitle = Model.instance.postList[indexPath.row].postTitle
 
-        return studentCell!
+        return postCell!
     }
     
 
