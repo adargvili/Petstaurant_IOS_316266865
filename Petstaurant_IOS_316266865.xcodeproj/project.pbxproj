@@ -111,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921823CD2843C9C70019D36D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9293FC9C28439194007FC5B1 /* Post.swift */,
+				9293FCA82843921E007FC5B1 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9293FC642843755C007FC5B1 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +139,7 @@
 		9293FC6F2843755C007FC5B1 /* Petstaurant_IOS_316266865 */ = {
 			isa = PBXGroup;
 			children = (
+				921823CD2843C9C70019D36D /* Model */,
 				9293FC702843755C007FC5B1 /* AppDelegate.swift */,
 				9293FC722843755C007FC5B1 /* SceneDelegate.swift */,
 				9293FC742843755C007FC5B1 /* ViewController.swift */,
@@ -137,13 +147,11 @@
 				9293FC792843755E007FC5B1 /* Assets.xcassets */,
 				9293FC7B2843755E007FC5B1 /* LaunchScreen.storyboard */,
 				9293FC7E2843755E007FC5B1 /* Info.plist */,
-				9293FC9C28439194007FC5B1 /* Post.swift */,
 				9293FC9E284391B1007FC5B1 /* DetailViewController.swift */,
 				9293FCA0284391CB007FC5B1 /* AboutViewController.swift */,
 				9293FCA2284391DE007FC5B1 /* NewPostViewController.swift */,
 				9293FCA4284391F5007FC5B1 /* MainSegueProtocol.swift */,
 				9293FCA628439213007FC5B1 /* MainViewController.swift */,
-				9293FCA82843921E007FC5B1 /* Model.swift */,
 				9293FCAA2843923C007FC5B1 /* PostListTableViewController.swift */,
 				9293FCAC28439265007FC5B1 /* PostTableViewCell.swift */,
 				921823942843BDFA0019D36D /* GoogleService-Info.plist */,
