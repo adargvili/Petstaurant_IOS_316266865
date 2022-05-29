@@ -111,14 +111,14 @@
             <objects>
                 <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-i3-Ufp">
-                                <rect key="frame" x="20" y="88" width="374" height="720"/>
+                                <rect key="frame" x="20" y="0.0" width="374" height="754"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ze-dQI">
-                                <rect key="frame" x="20" y="807" width="374" height="67"/>
+                                <rect key="frame" x="20" y="753" width="374" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14N-4J-af3" userLabel="homeButton">
                                         <rect key="frame" x="41" y="11" width="45" height="45"/>
@@ -160,7 +160,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPW-kb-2lu" userLabel="addButton">
-                                <rect key="frame" x="166.5" y="752" width="81" height="122"/>
+                                <rect key="frame" x="166.5" y="698" width="81" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6gF-s6-8ye"/>
                                     <constraint firstAttribute="height" constant="122" id="fNZ-0V-EGi"/>
@@ -489,26 +489,23 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hOR-5h-Now">
-                                <rect key="frame" x="40" y="128" width="334" height="371.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KKw-Ri-xkE">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="textColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGc-sc-Bx5">
                                         <rect key="frame" x="0.0" y="70" width="334" height="40"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="textColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-vC-hgc">
                                         <rect key="frame" x="0.0" y="140" width="334" height="40"/>
                                         <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="textColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -516,7 +513,6 @@
                                         <rect key="frame" x="0.0" y="210" width="334" height="40"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <color key="textColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -533,9 +529,12 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="baseForegroundColor" name="AccentColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SignUp:" destination="Ple-Fw-30l" eventType="touchUpInside" id="3a9-2S-687"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-p5-ibU">
-                                        <rect key="frame" x="0.0" y="350" width="334" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-p5-ibU">
+                                        <rect key="frame" x="0.0" y="350" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <color key="shadowColor" systemColor="systemRedColor"/>
@@ -566,11 +565,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="K10-1n-GGr"/>
                     <connections>
-                        <outlet property="EmailTextField" destination="KKw-Ri-xkE" id="5k2-xm-cM4"/>
-                        <outlet property="NameTextField" destination="KGc-sc-Bx5" id="vg4-mY-46w"/>
-                        <outlet property="PasswordTextField" destination="O1u-vC-hgc" id="scR-z7-rfr"/>
                         <outlet property="confirmPasswordTextField" destination="0MO-9I-CkC" id="LTQ-vK-ljl"/>
-                        <outlet property="errorLabel" destination="hOR-5h-Now" id="rtE-VC-59A"/>
+                        <outlet property="emailTextField" destination="KKw-Ri-xkE" id="5k2-xm-cM4"/>
+                        <outlet property="errorLabel" destination="hdK-p5-ibU" id="WdF-D1-DtV"/>
+                        <outlet property="nameTextField" destination="KGc-sc-Bx5" id="vg4-mY-46w"/>
+                        <outlet property="passwordTextField" destination="O1u-vC-hgc" id="scR-z7-rfr"/>
                         <outlet property="signUpBtn" destination="fIV-wk-hdK" id="idR-Cd-j93"/>
                     </connections>
                 </viewController>
@@ -587,7 +586,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="W24-4D-a7Q">
-                                <rect key="frame" x="40" y="128" width="334" height="231.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0M2-EP-q4F">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -621,8 +620,8 @@
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-7t-Dae">
-                                        <rect key="frame" x="0.0" y="210" width="334" height="21.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-7t-Dae">
+                                        <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" systemColor="systemRedColor"/>
@@ -676,6 +675,9 @@
             <point key="canvasLocation" x="-1375.3623188405797" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Yqu-Pc-z1J"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>

@@ -34,5 +34,28 @@ class Model{
         firebaseModel.delete(post: post)
     }
     
+    func validateEmptyFields(fields:[String]) -> Bool{
+        for field in fields{
+            if field == "" {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func validatePassword(password:String) -> Bool{
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}")
+        return passwordRegex.evaluate(with: password)
+    }
+    
+    func validateEmail(email:String) -> Bool{
+        let emailRegex = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+        return emailRegex.evaluate(with: email)
+    }
+    
+    func validatePasswordWithPasswordConfirm(password: String, passwordConfirm: String) -> Bool{
+        return password == passwordConfirm
+    }
+    
     
 }
