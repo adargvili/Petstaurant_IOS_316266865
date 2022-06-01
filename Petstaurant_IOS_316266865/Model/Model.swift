@@ -16,8 +16,8 @@ class Model{
        
     }
     
-    func createUser(user:User, completion: @escaping ()->Void){
-        firebaseModel.createUser(user: user){
+    func createUser(email: String, password: String, userName: String, profileImageUrl: String, completion: @escaping ()->Void){
+        firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl){
             completion()
         }
     }

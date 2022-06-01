@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
+import FirebaseAuth
 import UIKit
 
 class ModelFirebase{
@@ -19,17 +20,26 @@ class ModelFirebase{
         
     }
     
-    func createUser(user:User, completion:@escaping ()->Void){
-        db.collection("Users").document(user.id!).setData(
-            user.toJson())
-        { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with")
+    func createUser(email:String, password:String,userName:String,profileImageUrl:String, completion:@escaping ()->Void){
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            if err != nil{
+                //TODO
             }
-            completion()
+            else{
+                let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
+                self.db.collection("Users").document(user.id!).setData(
+                    user.toJson())
+                { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with")
+                    }
+                    completion()
+                }
+            }
         }
+      
     }
     
     func getAllPosts(completion:@escaping ([Post])->Void){
