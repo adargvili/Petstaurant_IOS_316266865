@@ -16,6 +16,13 @@ class Model{
        
     }
     
+    func createUser(user:User, completion: @escaping ()->Void){
+        firebaseModel.createUser(user: user){
+            completion()
+        }
+    }
+    
+    
     func addPostToList(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPostToList(post: post){
             completion()

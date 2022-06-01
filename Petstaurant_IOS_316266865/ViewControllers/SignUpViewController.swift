@@ -38,6 +38,9 @@ class SignUpViewController: UIViewController {
         
         if !Model.instance.validatePasswordWithPasswordConfirm(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), passwordConfirm: confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Password are not matched";return;}
         
+        let user = User(email: emailTextField.text!, password: passwordTextField.text!, userName: "",profileImageUrl: "")
+        Model.instance.createUser(user: user){}
+        
     
     }
 }

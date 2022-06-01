@@ -19,6 +19,19 @@ class ModelFirebase{
         
     }
     
+    func createUser(user:User, completion:@escaping ()->Void){
+        db.collection("Users").document(user.id!).setData(
+            user.toJson())
+        { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with")
+            }
+            completion()
+        }
+    }
+    
     func getAllPosts(completion:@escaping ([Post])->Void){
         db.collection("Posts").getDocuments() { (querySnapshot, err) in
             var posts = [Post]()
