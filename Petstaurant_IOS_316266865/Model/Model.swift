@@ -22,6 +22,12 @@ class Model{
         }
     }
     
+    func loginUser(email: String, password: String, completion: @escaping ()->Void){
+        firebaseModel.loginUser(email: email, password: password){
+            completion()
+        }
+    }
+    
     
     func addPostToList(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPostToList(post: post){

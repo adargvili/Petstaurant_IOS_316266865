@@ -488,7 +488,7 @@
                                     <color key="baseForegroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="btp-FB-wy6" kind="show" id="PW8-pl-M4W"/>
+                                    <segue destination="btp-FB-wy6" kind="show" id="gFm-b8-OdT"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hOR-5h-Now">
@@ -666,6 +666,9 @@
                                             <color key="baseForegroundColor" name="AccentColor"/>
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="btp-FB-wy6" eventType="touchUpInside" id="4gk-ef-fY1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-7t-Dae">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
@@ -691,12 +694,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="zGb-pc-icW"/>
                     <connections>
-                        <outlet property="emailLoginTextField" destination="0M2-EP-q4F" id="3ZT-6q-iYX"/>
-                        <outlet property="emailTextField" destination="0M2-EP-q4F" id="e1B-oy-MyD"/>
-                        <outlet property="errorLoginBtn" destination="5m9-7t-Dae" id="1Tq-lc-D23"/>
-                        <outlet property="loginBtn" destination="UZq-EU-G3s" id="Xmt-Wx-DVc"/>
-                        <outlet property="passwordLoginTextFIeld" destination="s73-9R-cbn" id="Pn4-54-6u2"/>
-                        <outlet property="passwordTextField" destination="s73-9R-cbn" id="Ebo-Vz-y31"/>
+                        <outlet property="emailLoginTextField" destination="0M2-EP-q4F" id="OWB-X0-1Pt"/>
+                        <outlet property="errorLoginBtn" destination="5m9-7t-Dae" id="Erd-wU-LJZ"/>
+                        <outlet property="loginBtn" destination="UZq-EU-G3s" id="dkL-dg-X9U"/>
+                        <outlet property="passwordLoginTextField" destination="s73-9R-cbn" id="C8n-3q-x8x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWz-ER-mbj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

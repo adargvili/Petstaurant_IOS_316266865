@@ -42,6 +42,18 @@ class ModelFirebase{
       
     }
     
+    func loginUser(email:String, password:String, completion:@escaping ()->Void){
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+            if err != nil{
+                //TODO
+            }
+            else{
+            }
+        }
+      
+    }
+    
+    
     func getAllPosts(completion:@escaping ([Post])->Void){
         db.collection("Posts").getDocuments() { (querySnapshot, err) in
             var posts = [Post]()

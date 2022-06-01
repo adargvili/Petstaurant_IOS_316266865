@@ -10,11 +10,11 @@ import UIKit
 class LoginViewController: UIViewController {
     
 
+
     @IBOutlet weak var emailLoginTextField: UITextField!
-    @IBOutlet weak var passwordLoginTextFIeld: UITextField!
+    @IBOutlet weak var passwordLoginTextField:UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var errorLoginBtn: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,6 +22,14 @@ class LoginViewController: UIViewController {
     
     
     
+    @IBAction func loginTapped(_ sender: Any) {
+        Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!){}
+        
+        let aboutViewController = storyboard?.instantiateViewController(withIdentifier: "AboutVC") as? AboutViewController
+        view.window?.rootViewController = aboutViewController
+        view.window?.makeKeyAndVisible()
+        
+    }
     
     
     
