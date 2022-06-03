@@ -43,16 +43,26 @@ class ViewController: UIViewController , MySegueProtocol {
             image: UIImage(systemName: "person.circle"),
             style:.done,
             target: self,
-            action: nil
+            action: #selector(logoutAction)
         )
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "gear"),
             style:.done,
             target: self,
-            action: nil
+            action: #selector(settings)
         )
         
+    }
+    
+    @objc fileprivate func logoutAction(){
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpViewController
+        self.navigationController?.setViewControllers([resultViewController], animated: true)
+    }
+    
+    @objc fileprivate func settings(){
     }
 
 }

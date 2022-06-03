@@ -36,6 +36,11 @@ class Model{
         
     }
     
+//    func logoutUser(post:Post, completion: @escaping ()->Void){
+//        firebaseModel.addPostToList(post: post){
+//            completion()
+//        }
+//    }
     
     func addPostToList(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPostToList(post: post){
