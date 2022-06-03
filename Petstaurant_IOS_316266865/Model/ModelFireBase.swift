@@ -48,22 +48,30 @@ class ModelFirebase{
                 onError(error.localizedDescription)
             }
             else{
-                let defaults = UserDefaults.standard
                 FirebaseAuth.Auth.auth().addStateDidChangeListener{ auth, user in
                     if let user = user {
                         
-                        defaults.set(user.uid, forKey: "uid")
-                        defaults.set(user.email, forKey: "email")
-                        
+                        UserDefaults.standard.set(user.uid, forKey: "uid")
+                        UserDefaults.standard.set(user.email, forKey: "email")
                     } else {
-                        defaults.set("", forKey: "uid")
-                        defaults.set("", forKey: "email")
+                        UserDefaults.standard.set("", forKey: "uid")
+                        UserDefaults.standard.set("", forKey: "email")
                     }
                 }
                 onSuccess()
             }
         }
         
+    }
+    
+    func logoutUser(completion:@escaping ()->Void){
+        
+        do {
+            try Auth.auth().signOut()
+            completion()
+        } catch let err {
+            print(err)
+        }
     }
     
     

@@ -56,7 +56,7 @@ class ViewController: UIViewController , MySegueProtocol {
     }
     
     @objc fileprivate func logoutAction(){
-        
+        Model.instance.logoutUser(){}
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpViewController
         self.navigationController?.setViewControllers([resultViewController], animated: true)
