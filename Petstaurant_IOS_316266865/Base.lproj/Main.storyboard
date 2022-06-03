@@ -315,6 +315,9 @@
                     </label>
                     <navigationItem key="navigationItem" title="About" id="0f7-I8-hx0"/>
                     <size key="freeformSize" width="374" height="694"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="Mvj-fT-cks" id="n6K-do-hpE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5p-yo-ZCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

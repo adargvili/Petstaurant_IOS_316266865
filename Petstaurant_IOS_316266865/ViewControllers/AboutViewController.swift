@@ -9,13 +9,11 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet var aboutLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        print(String(UserDefaults.standard.string(forKey: "uid")!))
-        print(String(UserDefaults.standard.string(forKey: "email")!))
-
+        aboutLabel.text = "Hello Dear: " + String(UserDefaults.standard.string(forKey: "email")!) + " !"
     }
 
 
