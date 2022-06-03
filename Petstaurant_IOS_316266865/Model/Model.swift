@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Model{
     let firebaseModel = ModelFirebase()
@@ -58,6 +59,10 @@ class Model{
     
     func delete(post:Post){
         firebaseModel.delete(post: post)
+    }
+    
+    func uploadImage(name:String, image:UIImage, callback:@escaping(_ url:String)->Void){
+        firebaseModel.uploadImage(name: name, image: image, callback: callback)
     }
     
     func validateEmptyFields(fields:[String]) -> Bool{

@@ -16,8 +16,15 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var postTitleInput: UITextField!
     @IBOutlet weak var avatarImgv: UIImageView!
     @IBAction func saveBtn(_ sender: UIButton) {
-        let post = Post(uid: "", postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
-        Model.instance.addPostToList(post: post){}
+        if let image = selectedImage{
+            let post = Post(uid: String(UserDefaults.standard.string(forKey: "uid")!) , postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
+            Model.instance.uploadImage(name: post.id!, image: image) { url in
+                post.postImage = url
+                Model.instance.addPostToList(post: post){}
+            }
+        }else{
+        }
+        
         let viewController = self.navigationController?.parent as! ViewController
         viewController.removeSubViews()
         viewController.performSegue(withIdentifier: "postListSegue", sender: self)
@@ -37,8 +44,6 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
         textField.resignFirstResponder()
         return true
     }
-    
-    
     
     
     func takePicture(source: UIImagePickerController.SourceType){
