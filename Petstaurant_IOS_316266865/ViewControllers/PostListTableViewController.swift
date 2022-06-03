@@ -23,6 +23,9 @@ class PostListTableViewController: UITableViewController {
     var row = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        Model.postDataNotification.observe {
+            self.reload()
+        }
         reload()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {

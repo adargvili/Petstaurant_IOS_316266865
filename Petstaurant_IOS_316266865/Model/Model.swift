@@ -8,14 +8,35 @@
 import Foundation
 import UIKit
 
+class ModelNotificatiponBase{
+    let name:String
+    init(_ name:String){
+        self.name=name
+    }
+    func observe(callback:@escaping ()->Void){
+        NotificationCenter.default.addObserver(forName: Notification.Name(name), object: nil, queue: nil){ data in
+            NSLog("got notify")
+            callback()
+        }
+    }
+    
+    func post(){
+        NSLog("post notify")
+        NotificationCenter.default.post(name: Notification.Name(name), object: self)
+    }
+
+}
+
 class Model{
     let firebaseModel = ModelFirebase()
     static let instance = Model()
+    static let postDataNotification = ModelNotificatiponBase("com.adar.postDataNotification")
     var postList = [Post]()
     
     private init(){
        
     }
+    
     
     func createUser(email: String, password: String, userName: String, profileImageUrl: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
         firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl, onSuccess: {
@@ -46,6 +67,7 @@ class Model{
     func addPostToList(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPostToList(post: post){
             completion()
+            Model.postDataNotification.post()
         }
     }
     
