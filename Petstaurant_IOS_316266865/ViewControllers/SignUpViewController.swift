@@ -40,8 +40,8 @@ class SignUpViewController: UIViewController {
         
         Model.instance.createUser(email: emailTextField.text!, password: passwordTextField.text!, userName: nameTextField.text!,profileImageUrl: ""){}
             
-        let aboutViewController = storyboard?.instantiateViewController(withIdentifier: "AboutVC") as? AboutViewController
-        view.window?.rootViewController = aboutViewController
-        view.window?.makeKeyAndVisible()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AboutVC") as! AboutViewController
+        self.navigationController?.pushViewController(resultViewController, animated: true)
     }
 }

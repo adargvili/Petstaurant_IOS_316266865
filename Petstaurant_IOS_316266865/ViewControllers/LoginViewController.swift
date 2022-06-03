@@ -25,9 +25,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!){}
         
-        let aboutViewController = storyboard?.instantiateViewController(withIdentifier: "AboutVC") as? AboutViewController
-        view.window?.rootViewController = aboutViewController
-        view.window?.makeKeyAndVisible()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AboutVC") as! AboutViewController
+        self.navigationController?.pushViewController(resultViewController, animated: true)
         
     }
     
