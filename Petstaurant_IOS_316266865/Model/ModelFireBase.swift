@@ -48,13 +48,16 @@ class ModelFirebase{
                 onError(error.localizedDescription)
             }
             else{
-                
+                let defaults = UserDefaults.standard
                 FirebaseAuth.Auth.auth().addStateDidChangeListener{ auth, user in
                     if let user = user {
-                        print(user.uid)
-                        print(String(user.email!) )
+                        
+                        defaults.set(user.uid, forKey: "uid")
+                        defaults.set(user.email, forKey: "email")
+                        
                     } else {
-                        print("User is signed out.")
+                        defaults.set("", forKey: "uid")
+                        defaults.set("", forKey: "email")
                     }
                 }
                 onSuccess()
