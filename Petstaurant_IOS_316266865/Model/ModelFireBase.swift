@@ -21,10 +21,10 @@ class ModelFirebase{
     }
     
     func createUser(email:String, password:String,userName:String,profileImageUrl:String, completion:@escaping ()->Void){
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-            if err != nil{
-                //TODO
-            }
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error as NSError? {
+                print("Error: \(error.localizedDescription)")
+          }
             else{
                 let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
                 self.db.collection("Users").document(user.id!).setData(
@@ -43,10 +43,10 @@ class ModelFirebase{
     }
     
     func loginUser(email:String, password:String, completion:@escaping ()->Void){
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
-            if err != nil{
-                //TODO
-            }
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error as NSError? {
+                print("Error: \(error.localizedDescription)")
+          }
             else{
             }
         }
