@@ -10,6 +10,8 @@ import UIKit
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var galleryBtn: UIButton!
+    @IBOutlet weak var cameraBtn: UIButton!
     @IBOutlet weak var postDescriptionInput: UITextField!
     @IBOutlet weak var postTitleInput: UITextField!
     @IBOutlet weak var avatarImgv: UIImageView!
@@ -60,6 +62,12 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
 
     }
     
+    @IBAction func openCamera(_ sender: Any) {
+        takePicture(source: .camera)
+    }
+    @IBAction func openGallery(_ sender: Any) {
+        takePicture(source: .photoLibrary)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
