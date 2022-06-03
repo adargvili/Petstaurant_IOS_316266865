@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         
         Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!, onSuccess: {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AboutVC") as! AboutViewController
+            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
             self.navigationController?.pushViewController(resultViewController, animated: true)
             return
         }) { (errorMsg) in
