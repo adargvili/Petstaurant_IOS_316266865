@@ -42,6 +42,7 @@ class SignUpViewController: UIViewController {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AboutVC") as! AboutViewController
             self.navigationController?.pushViewController(resultViewController, animated: true)
+            return
         }) { (errorMsg) in
             self.errorLabel.text = errorMsg
             return
