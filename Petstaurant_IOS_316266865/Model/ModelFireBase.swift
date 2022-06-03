@@ -24,7 +24,7 @@ class ModelFirebase{
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error as NSError? {
                 onError(error.localizedDescription)
-          }
+            }
             else{
                 let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
                 self.db.collection("Users").document(user.id!).setData(
@@ -39,19 +39,28 @@ class ModelFirebase{
                 }
             }
         }
-      
+        
     }
     
     func loginUser(email:String, password:String,  onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error as NSError? {
                 onError(error.localizedDescription)
-          }
+            }
             else{
+                
+                FirebaseAuth.Auth.auth().addStateDidChangeListener{ auth, user in
+                    if let user = user {
+                        print(user.uid)
+                        print(String(user.email!) )
+                    } else {
+                        print("User is signed out.")
+                    }
+                }
                 onSuccess()
             }
         }
-      
+        
     }
     
     
