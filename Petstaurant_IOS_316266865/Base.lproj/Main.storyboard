@@ -331,49 +331,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-Oq-rbb">
-                                <rect key="frame" x="40" y="128" width="414" height="638"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-Oq-rbb">
+                                <rect key="frame" x="10" y="128" width="374" height="590"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUx-2b-Ubr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
-                                    </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-HF-V9S">
-                                        <rect key="frame" x="0.0" y="120" width="414" height="196"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-HF-V9S">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="374" id="3HC-TF-QeU"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="FLO-xT-haX"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Ko8-8l-i0N"/>
                                             <constraint firstAttribute="height" constant="196" id="MA9-Qa-KHd"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="c31-tX-tDu"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="iYU-PQ-Fi9"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="196" id="oWC-st-2T3"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="q0N-m2-gtm"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="zuf-ac-29i"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgM-Wg-dDJ">
-                                        <rect key="frame" x="0.0" y="326" width="414" height="31"/>
-                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUx-2b-Ubr">
+                                        <rect key="frame" x="0.0" y="210" width="374" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybh-y3-jVO">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="book" catalog="system"/>
+                                                <connections>
+                                                    <action selector="openGallery:" destination="S29-48-NuX" eventType="touchUpInside" id="K2f-ih-n1C"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgM-Wg-dDJ">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system">
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="openCamera:" destination="S29-48-NuX" eventType="touchUpInside" id="Qq2-Dg-Sqj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="3wC-iS-QmD"/>
+                                            <constraint firstItem="YgM-Wg-dDJ" firstAttribute="width" secondItem="ybh-y3-jVO" secondAttribute="width" id="UFM-Hh-piI"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system">
-                                            <color key="baseForegroundColor" name="AccentColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="openCamera:" destination="S29-48-NuX" eventType="touchUpInside" id="Qq2-Dg-Sqj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybh-y3-jVO">
-                                        <rect key="frame" x="0.0" y="367" width="414" height="31"/>
-                                        <color key="backgroundColor" systemColor="labelColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="Jzn-7K-obe"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="book" catalog="system"/>
-                                        <connections>
-                                            <action selector="openGallery:" destination="S29-48-NuX" eventType="touchUpInside" id="K2f-ih-n1C"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="afE-Af-3Bm">
-                                        <rect key="frame" x="0.0" y="408" width="414" height="50"/>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="afE-Af-3Bm">
+                                        <rect key="frame" x="0.0" y="270" width="374" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <constraints>
@@ -393,15 +397,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d65-72-l0a" userLabel="ID input">
-                                        <rect key="frame" x="0.0" y="468" width="414" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d65-72-l0a" userLabel="ID input">
+                                        <rect key="frame" x="0.0" y="330" width="374" height="200"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="0mB-9C-uh6"/>
-                                            <constraint firstAttribute="height" constant="50" id="JdP-mI-vbW"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="KIV-TP-tsB"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sK5-hd-2Eu"/>
-                                        </constraints>
                                         <color key="textColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="postal-code"/>
@@ -415,61 +413,59 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-QE-Qkl">
-                                        <rect key="frame" x="0.0" y="528" width="414" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ft-79-G9X">
+                                        <rect key="frame" x="0.0" y="540" width="374" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcS-ij-1ti">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Cancel" cornerStyle="large">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" name="AccentColor"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="xBtn:" destination="S29-48-NuX" eventType="touchUpInside" id="GcE-a0-jpw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-QE-Qkl">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Save" cornerStyle="large">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" name="AccentColor"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="saveBtn:" destination="S29-48-NuX" eventType="touchUpInside" id="5Ih-2W-BJ2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jT0-6V-hzW"/>
+                                            <constraint firstItem="Ghi-QE-Qkl" firstAttribute="width" secondItem="HcS-ij-1ti" secondAttribute="width" id="5vI-8B-3eg"/>
                                         </constraints>
-                                        <buttonConfiguration key="configuration" style="filled" title="Save" cornerStyle="large">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="strokeColor" name="AccentColor"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
-                                            <color key="baseForegroundColor" name="AccentColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="saveBtn:" destination="S29-48-NuX" eventType="touchUpInside" id="5Ih-2W-BJ2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcS-ij-1ti">
-                                        <rect key="frame" x="0.0" y="588" width="414" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ng2-ug-xb8"/>
-                                        </constraints>
-                                        <buttonConfiguration key="configuration" style="filled" title="Cancel" cornerStyle="large">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="strokeColor" name="AccentColor"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
-                                            <color key="baseForegroundColor" name="AccentColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="xBtn:" destination="S29-48-NuX" eventType="touchUpInside" id="GcE-a0-jpw"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="d65-72-l0a" firstAttribute="height" secondItem="afE-Af-3Bm" secondAttribute="height" id="07N-xR-0x9"/>
-                                    <constraint firstItem="YgM-Wg-dDJ" firstAttribute="height" secondItem="afE-Af-3Bm" secondAttribute="height" multiplier="0.62" id="5JM-RR-XTW"/>
-                                    <constraint firstItem="YgM-Wg-dDJ" firstAttribute="height" secondItem="afE-Af-3Bm" secondAttribute="height" multiplier="0.62" id="G48-rL-Ket"/>
-                                    <constraint firstItem="HcS-ij-1ti" firstAttribute="height" secondItem="afE-Af-3Bm" secondAttribute="height" id="Uii-sK-Umk"/>
-                                    <constraint firstItem="YgM-Wg-dDJ" firstAttribute="width" secondItem="afE-Af-3Bm" secondAttribute="width" id="cCe-QS-MnH"/>
-                                    <constraint firstItem="Ghi-QE-Qkl" firstAttribute="height" secondItem="afE-Af-3Bm" secondAttribute="height" id="ofw-pr-bjp"/>
+                                    <constraint firstItem="d65-72-l0a" firstAttribute="width" secondItem="afE-Af-3Bm" secondAttribute="width" id="7O9-SK-x7U"/>
+                                    <constraint firstItem="afE-Af-3Bm" firstAttribute="height" secondItem="LUx-2b-Ubr" secondAttribute="height" id="EDg-Cr-jai"/>
+                                    <constraint firstItem="5Ft-79-G9X" firstAttribute="height" secondItem="afE-Af-3Bm" secondAttribute="height" id="KWJ-jP-dlR"/>
+                                    <constraint firstItem="d65-72-l0a" firstAttribute="height" secondItem="BwN-HF-V9S" secondAttribute="height" id="OAP-i2-7d6"/>
+                                    <constraint firstItem="afE-Af-3Bm" firstAttribute="height" secondItem="LUx-2b-Ubr" secondAttribute="height" id="a4O-Lq-ubv"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rqc-gC-EVI"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="centerX" secondItem="rqc-gC-EVI" secondAttribute="centerX" id="1yp-ch-Kkl"/>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="top" secondItem="rqc-gC-EVI" secondAttribute="top" constant="204" id="6ms-s6-Qxt"/>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="top" secondItem="rqc-gC-EVI" secondAttribute="top" constant="40" id="UPl-bW-Occ"/>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="trailing" secondItem="rqc-gC-EVI" secondAttribute="trailing" constant="40" id="eGc-nd-lI1"/>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="centerX" secondItem="rqc-gC-EVI" secondAttribute="centerX" id="tar-ej-BNG"/>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="leading" secondItem="rqc-gC-EVI" secondAttribute="leading" constant="40" id="uie-UL-luM"/>
-                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="centerX" secondItem="rqc-gC-EVI" secondAttribute="centerX" id="ztw-fH-ZXi"/>
+                            <constraint firstItem="rqc-gC-EVI" firstAttribute="bottom" secondItem="0VC-Oq-rbb" secondAttribute="bottom" constant="80" id="4Pm-nA-Rqg"/>
+                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="leading" secondItem="rqc-gC-EVI" secondAttribute="leading" constant="10" id="LRC-dW-Krr"/>
+                            <constraint firstItem="rqc-gC-EVI" firstAttribute="trailing" secondItem="0VC-Oq-rbb" secondAttribute="trailing" constant="30" id="YRs-4i-f6L"/>
+                            <constraint firstItem="0VC-Oq-rbb" firstAttribute="top" secondItem="rqc-gC-EVI" secondAttribute="top" constant="40" id="kqq-q3-DNB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add a New Post" id="AsV-UL-tI7"/>
