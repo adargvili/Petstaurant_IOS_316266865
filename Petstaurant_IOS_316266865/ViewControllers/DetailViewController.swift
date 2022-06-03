@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
     
@@ -26,6 +27,12 @@ class DetailViewController: UIViewController {
         avatar.clipsToBounds=true
         postDescriptionLabel.text = post?.postDescription
         postTitleLabel.text = post?.postTitle
+        if let urlStr = post?.postImage {
+            let url = URL(string: urlStr)
+            avatar?.kf.setImage(with: url)
+        }else{
+            avatar.image = UIImage(named: "userAvatar")
+        }
         
     }
     

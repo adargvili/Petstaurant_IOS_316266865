@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostListTableViewController: UITableViewController {
     
@@ -37,7 +38,12 @@ class PostListTableViewController: UITableViewController {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
         postCell?.postDescription = posts[indexPath.row].postDescription ?? ""
         postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
-
+        if let urlStr = posts[indexPath.row].postImage {
+            let url = URL(string: urlStr)
+            postCell?.avatarImage?.kf.setImage(with: url)
+        }else{
+            postCell?.avatarImage.image = UIImage(named: "userAvatar")
+        }
         return postCell!
     }
     
