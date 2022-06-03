@@ -20,10 +20,10 @@ class ModelFirebase{
         
     }
     
-    func createUser(email:String, password:String,userName:String,profileImageUrl:String, completion:@escaping ()->Void){
+    func createUser(email:String, password:String,userName:String,profileImageUrl:String,  onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error as NSError? {
-                print("Error: \(error.localizedDescription)")
+                onError(error.localizedDescription)
           }
             else{
                 let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
@@ -35,19 +35,20 @@ class ModelFirebase{
                     } else {
                         print("Document added with")
                     }
-                    completion()
+                    onSuccess()
                 }
             }
         }
       
     }
     
-    func loginUser(email:String, password:String, completion:@escaping ()->Void){
+    func loginUser(email:String, password:String,  onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error as NSError? {
-                print("Error: \(error.localizedDescription)")
+                onError(error.localizedDescription)
           }
             else{
+                onSuccess()
             }
         }
       

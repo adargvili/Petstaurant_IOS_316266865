@@ -9,8 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-
-
+    
+    
     @IBOutlet weak var emailLoginTextField: UITextField!
     @IBOutlet weak var passwordLoginTextField:UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -36,11 +36,14 @@ class LoginViewController: UIViewController {
         if !Model.instance.validatePassword(password: passwordLoginTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLoginBtn.text = "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character";return;}
         
         
-        Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!){}
+        Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!, onSuccess: {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AboutVC") as! AboutViewController
+            self.navigationController?.pushViewController(resultViewController, animated: true)        }) { (errorMsg) in
+                self.errorLoginBtn.text = errorMsg
+                return
+            }
         
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AboutVC") as! AboutViewController
-        self.navigationController?.pushViewController(resultViewController, animated: true)
         
     }
     

@@ -16,16 +16,24 @@ class Model{
        
     }
     
-    func createUser(email: String, password: String, userName: String, profileImageUrl: String, completion: @escaping ()->Void){
-        firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl){
-            completion()
+    func createUser(email: String, password: String, userName: String, profileImageUrl: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
+        firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl, onSuccess: {
+            onSuccess()
+        }) { (errorMsg) in
+            onError(errorMsg!)
+            return
         }
     }
     
-    func loginUser(email: String, password: String, completion: @escaping ()->Void){
-        firebaseModel.loginUser(email: email, password: password){
-            completion()
+    func loginUser(email: String, password: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
+        
+        firebaseModel.loginUser(email: email, password: password, onSuccess: {
+            onSuccess()
+        }) { (errorMsg) in
+            onError(errorMsg!)
+            return
         }
+        
     }
     
     
