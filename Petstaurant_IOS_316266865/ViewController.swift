@@ -29,12 +29,30 @@ class ViewController: UIViewController , MySegueProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         performSegue(withIdentifier: "postListSegue", sender: self)
+        configureItems()
     }
     
     func removeSubViews(){
         for v in containerView.subviews{
             v.removeFromSuperview()
         }
+    }
+    
+    private func configureItems(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "person.circle"),
+            style:.done,
+            target: self,
+            action: nil
+        )
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "gear"),
+            style:.done,
+            target: self,
+            action: nil
+        )
+        
     }
 
 }

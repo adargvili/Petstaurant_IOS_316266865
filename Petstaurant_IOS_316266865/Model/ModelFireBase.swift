@@ -68,7 +68,7 @@ class ModelFirebase{
     
     
     func getAllPosts(completion:@escaping ([Post])->Void){
-        db.collection("Posts").whereField("uid", isNotEqualTo: String(UserDefaults.standard.string(forKey: "uid")!)).getDocuments() { (querySnapshot, err) in
+        db.collection("Posts").getDocuments() { (querySnapshot, err) in
             var posts = [Post]()
             if let err = err {
                 print("Error getting documents: \(err)")
