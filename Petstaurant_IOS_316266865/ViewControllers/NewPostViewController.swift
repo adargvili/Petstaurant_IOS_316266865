@@ -8,10 +8,11 @@
 
 import UIKit
 
-class NewPostViewController: UIViewController, UITextFieldDelegate {
+class NewPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var postDescriptionInput: UITextField!
     @IBOutlet weak var postTitleInput: UITextField!
+    @IBOutlet weak var avatarImgv: UIImageView!
     @IBAction func saveBtn(_ sender: UIButton) {
         let post = Post(uid: "", postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
         Model.instance.addPostToList(post: post){}
@@ -34,6 +35,31 @@ class NewPostViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    var selectedImage: UIImage?
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.avatarImgv.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
