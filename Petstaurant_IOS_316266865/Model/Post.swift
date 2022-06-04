@@ -32,9 +32,9 @@ extension Post{
         let s = Post()
         s.id = json["id"] as? String
         s.uid = json["uid"] as? String
-        s.postTitle = json["title"] as? String
-        s.postDescription = json["description"] as? String
-        s.postImage = json["image"] as? String
+        s.postTitle = json["postTitle"] as? String
+        s.postDescription = json["postDescription"] as? String
+        s.postImage = json["postImage"] as? String
         return s
     }
     
@@ -42,9 +42,9 @@ extension Post{
         var json = [String:Any]()
         json["id"] = self.id!
         json["uid"] = self.uid
-        json["title"] = self.postTitle!
-        json["description"] = self.postDescription!
-        json["image"] = self.postImage!
+        json["postTitle"] = self.postTitle!
+        json["postDescription"] = self.postDescription!
+        json["postImage"] = self.postImage!
         return json
     }
 }

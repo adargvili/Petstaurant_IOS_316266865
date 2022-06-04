@@ -41,7 +41,7 @@ extension User{
         json["id"] = self.id!
         json["email"] = self.email!
         json["userName"] = self.userName!
-        json["image"] = self.profileImageUrl!
+        json["profileImageUrl"] = self.profileImageUrl!
         return json
     }
 }
