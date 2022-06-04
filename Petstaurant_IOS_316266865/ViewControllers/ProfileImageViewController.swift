@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ProfileImageViewController: UIViewController {
+class ProfileImageViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
-    @IBOutlet weak var porfieImageAvatar: UIImageView!
+    @IBOutlet weak var profileImageAvatar: UIImageView!
     @IBOutlet weak var profileGalleryImage: UIButton!
     @IBOutlet weak var profileCameraImage: UIButton!
     @IBOutlet weak var continueBtn: UIButton!
@@ -25,5 +25,37 @@ class ProfileImageViewController: UIViewController {
         self.navigationController?.pushViewController(resultViewController, animated: true)
         return
     }
+    
+
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    var selectedImage: UIImage?
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.profileImageAvatar.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
+    @IBAction func openProfileCamera(_ sender: Any) {
+        takePicture(source: .camera)
+    }
+    
+    @IBAction func openProfileGallery(_ sender: Any) {
+        takePicture(source: .photoLibrary)
+    }
+    
     
 }
