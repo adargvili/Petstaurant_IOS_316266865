@@ -57,6 +57,7 @@ class Model{
         }
         
     }
+
     
     func logoutUser(completion: @escaping ()->Void){
         firebaseModel.logoutUser(){
@@ -108,6 +109,22 @@ class Model{
     
     func validatePasswordWithPasswordConfirm(password: String, passwordConfirm: String) -> Bool{
         return password == passwordConfirm
+    }
+    
+    
+    
+    func tfBorderColor(textField: UITextField,completion: @escaping ()->Void){
+        
+        textField.layer.backgroundColor = UIColor.systemYellow.cgColor
+        textField.layer.borderColor = UIColor.systemYellow.cgColor
+        textField.layer.borderWidth = 0.0
+        textField.layer.cornerRadius = 5
+        textField.layer.masksToBounds = false
+        textField.layer.shadowRadius = 2.0
+        textField.layer.shadowColor = UIColor.systemYellow.cgColor
+        textField.layer.shadowOpacity = 1.0
+        textField.layer.shadowRadius = 1.0
+        completion()
     }
     
     

@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorLoginBtn: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Model.instance.tfBorderColor(textField: emailLoginTextField){}
+        Model.instance.tfBorderColor(textField: passwordLoginTextField){}
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +71,6 @@ class LoginViewController: UIViewController {
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
         videoPlayer?.isMuted = true
         videoPlayer?.playImmediately(atRate: 0.3)
-        
     }
     
     

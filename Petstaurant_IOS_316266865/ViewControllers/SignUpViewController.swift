@@ -21,6 +21,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Model.instance.tfBorderColor(textField: emailTextField){}
+        Model.instance.tfBorderColor(textField: nameTextField){}
+        Model.instance.tfBorderColor(textField: passwordTextField){}
+        Model.instance.tfBorderColor(textField: confirmPasswordTextField){}
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +79,7 @@ class SignUpViewController: UIViewController {
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
         videoPlayer?.isMuted = true
         videoPlayer?.playImmediately(atRate: 0.3)
-        
     }
+    
+    
 }
