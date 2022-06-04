@@ -39,6 +39,7 @@
 		921823D12843D0930019D36D /* ModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921823D02843D0930019D36D /* ModelFireBase.swift */; };
 		921823D42843EB7F0019D36D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921823D32843EB7F0019D36D /* SignUpViewController.swift */; };
 		921823D62843EBD20019D36D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921823D52843EBD20019D36D /* LoginViewController.swift */; };
+		92281425284B33A500ED0AA2 /* DogReviews.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92F6FFA0284B2C2D00CD37A4 /* DogReviews.mp4 */; };
 		9259B7D9284AC381001010F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9259B7D8284AC381001010F6 /* Kingfisher */; };
 		9293FC712843755C007FC5B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293FC702843755C007FC5B1 /* AppDelegate.swift */; };
 		9293FC732843755C007FC5B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293FC722843755C007FC5B1 /* SceneDelegate.swift */; };
@@ -80,6 +81,7 @@
 		9293FCA82843921E007FC5B1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9293FCAA2843923C007FC5B1 /* PostListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
 		9293FCAC28439265007FC5B1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		92F6FFA0284B2C2D00CD37A4 /* DogReviews.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DogReviews.mp4; path = ../../../Downloads/DogReviews.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				9293FC742843755C007FC5B1 /* ViewController.swift */,
 				9293FC762843755C007FC5B1 /* Main.storyboard */,
 				9293FC792843755E007FC5B1 /* Assets.xcassets */,
+				92F6FFA0284B2C2D00CD37A4 /* DogReviews.mp4 */,
 				9293FC7B2843755E007FC5B1 /* LaunchScreen.storyboard */,
 				9293FC7E2843755E007FC5B1 /* Info.plist */,
 				9293FCA4284391F5007FC5B1 /* MainSegueProtocol.swift */,
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92281425284B33A500ED0AA2 /* DogReviews.mp4 in Resources */,
 				9293FC7D2843755E007FC5B1 /* LaunchScreen.storyboard in Resources */,
 				921823952843BDFB0019D36D /* GoogleService-Info.plist in Resources */,
 				9293FC7A2843755E007FC5B1 /* Assets.xcassets in Resources */,
