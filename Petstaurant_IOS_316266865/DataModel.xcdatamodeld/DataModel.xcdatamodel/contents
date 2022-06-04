@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Post" representedClassName="Post" syncable="YES">
+    <entity name="PostDao" representedClassName="PostDao" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="postDescription" optional="YES" attributeType="String"/>
         <attribute name="postImage" optional="YES" attributeType="String"/>
         <attribute name="postTitle" optional="YES" attributeType="String"/>
         <attribute name="uid" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
+    <entity name="UserDao" representedClassName="UserDao" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="profileImageUrl" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Post" positionX="-45" positionY="27" width="128" height="104"/>
+        <element name="UserDao" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="PostDao" positionX="-45" positionY="27" width="128" height="104"/>
     </elements>
 </model>

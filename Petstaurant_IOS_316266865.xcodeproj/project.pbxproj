@@ -42,6 +42,10 @@
 		92281427284B369500ED0AA2 /* DogReviews.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92281426284B366800ED0AA2 /* DogReviews.mp4 */; };
 		9228142A284B487100ED0AA2 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92281429284B487100ED0AA2 /* ProfileImageViewController.swift */; };
 		9228142F284B84A700ED0AA2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9228142D284B84A700ED0AA2 /* DataModel.xcdatamodeld */; };
+		9228143C284B8FA700ED0AA2 /* PostDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92281438284B8FA700ED0AA2 /* PostDao+CoreDataClass.swift */; };
+		9228143D284B8FA700ED0AA2 /* PostDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92281439284B8FA700ED0AA2 /* PostDao+CoreDataProperties.swift */; };
+		9228143E284B8FA700ED0AA2 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228143A284B8FA700ED0AA2 /* UserDao+CoreDataClass.swift */; };
+		9228143F284B8FA700ED0AA2 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228143B284B8FA700ED0AA2 /* UserDao+CoreDataProperties.swift */; };
 		9259B7D9284AC381001010F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9259B7D8284AC381001010F6 /* Kingfisher */; };
 		9293FC712843755C007FC5B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293FC702843755C007FC5B1 /* AppDelegate.swift */; };
 		9293FC732843755C007FC5B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293FC722843755C007FC5B1 /* SceneDelegate.swift */; };
@@ -69,6 +73,10 @@
 		92281426284B366800ED0AA2 /* DogReviews.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DogReviews.mp4; sourceTree = "<group>"; };
 		92281429284B487100ED0AA2 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
 		9228142E284B84A700ED0AA2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		92281438284B8FA700ED0AA2 /* PostDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataClass.swift"; sourceTree = "<group>"; };
+		92281439284B8FA700ED0AA2 /* PostDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9228143A284B8FA700ED0AA2 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9228143B284B8FA700ED0AA2 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9293FC6D2843755C007FC5B1 /* Petstaurant_IOS_316266865.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petstaurant_IOS_316266865.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9293FC702843755C007FC5B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9293FC722843755C007FC5B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 		921823CD2843C9C70019D36D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92281438284B8FA700ED0AA2 /* PostDao+CoreDataClass.swift */,
+				92281439284B8FA700ED0AA2 /* PostDao+CoreDataProperties.swift */,
+				9228143A284B8FA700ED0AA2 /* UserDao+CoreDataClass.swift */,
+				9228143B284B8FA700ED0AA2 /* UserDao+CoreDataProperties.swift */,
 				9293FC9C28439194007FC5B1 /* Post.swift */,
 				9293FCA82843921E007FC5B1 /* Model.swift */,
 				921823CE2843CE6E0019D36D /* User.swift */,
@@ -311,13 +323,17 @@
 				9293FCA1284391CB007FC5B1 /* AboutViewController.swift in Sources */,
 				9293FC752843755C007FC5B1 /* ViewController.swift in Sources */,
 				9293FCA5284391F5007FC5B1 /* MainSegueProtocol.swift in Sources */,
+				9228143F284B8FA700ED0AA2 /* UserDao+CoreDataProperties.swift in Sources */,
 				9293FC712843755C007FC5B1 /* AppDelegate.swift in Sources */,
+				9228143C284B8FA700ED0AA2 /* PostDao+CoreDataClass.swift in Sources */,
 				9293FC9F284391B1007FC5B1 /* DetailViewController.swift in Sources */,
 				9293FCA92843921E007FC5B1 /* Model.swift in Sources */,
 				921823D42843EB7F0019D36D /* SignUpViewController.swift in Sources */,
 				9293FCA3284391DE007FC5B1 /* NewPostViewController.swift in Sources */,
+				9228143D284B8FA700ED0AA2 /* PostDao+CoreDataProperties.swift in Sources */,
 				9293FCA728439213007FC5B1 /* MainViewController.swift in Sources */,
 				9228142A284B487100ED0AA2 /* ProfileImageViewController.swift in Sources */,
+				9228143E284B8FA700ED0AA2 /* UserDao+CoreDataClass.swift in Sources */,
 				9228142F284B84A700ED0AA2 /* DataModel.xcdatamodeld in Sources */,
 				921823D62843EBD20019D36D /* LoginViewController.swift in Sources */,
 				9293FC732843755C007FC5B1 /* SceneDelegate.swift in Sources */,
