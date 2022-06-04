@@ -40,6 +40,7 @@
 		921823D42843EB7F0019D36D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921823D32843EB7F0019D36D /* SignUpViewController.swift */; };
 		921823D62843EBD20019D36D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921823D52843EBD20019D36D /* LoginViewController.swift */; };
 		92281427284B369500ED0AA2 /* DogReviews.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92281426284B366800ED0AA2 /* DogReviews.mp4 */; };
+		9228142A284B487100ED0AA2 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92281429284B487100ED0AA2 /* ProfileImageViewController.swift */; };
 		9259B7D9284AC381001010F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9259B7D8284AC381001010F6 /* Kingfisher */; };
 		9293FC712843755C007FC5B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293FC702843755C007FC5B1 /* AppDelegate.swift */; };
 		9293FC732843755C007FC5B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293FC722843755C007FC5B1 /* SceneDelegate.swift */; };
@@ -65,6 +66,7 @@
 		921823D32843EB7F0019D36D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		921823D52843EBD20019D36D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92281426284B366800ED0AA2 /* DogReviews.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DogReviews.mp4; sourceTree = "<group>"; };
+		92281429284B487100ED0AA2 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
 		9293FC6D2843755C007FC5B1 /* Petstaurant_IOS_316266865.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petstaurant_IOS_316266865.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9293FC702843755C007FC5B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9293FC722843755C007FC5B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				9293FCAA2843923C007FC5B1 /* PostListTableViewController.swift */,
 				921823D32843EB7F0019D36D /* SignUpViewController.swift */,
 				921823D52843EBD20019D36D /* LoginViewController.swift */,
+				92281429284B487100ED0AA2 /* ProfileImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				921823D42843EB7F0019D36D /* SignUpViewController.swift in Sources */,
 				9293FCA3284391DE007FC5B1 /* NewPostViewController.swift in Sources */,
 				9293FCA728439213007FC5B1 /* MainViewController.swift in Sources */,
+				9228142A284B487100ED0AA2 /* ProfileImageViewController.swift in Sources */,
 				921823D62843EBD20019D36D /* LoginViewController.swift in Sources */,
 				9293FC732843755C007FC5B1 /* SceneDelegate.swift in Sources */,
 				9293FC9D28439194007FC5B1 /* Post.swift in Sources */,

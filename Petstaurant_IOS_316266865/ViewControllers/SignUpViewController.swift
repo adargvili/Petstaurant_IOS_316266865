@@ -50,7 +50,7 @@ class SignUpViewController: UIViewController {
         
         Model.instance.createUser(email: emailTextField.text!, password: passwordTextField.text!, userName: nameTextField.text!,profileImageUrl: "", onSuccess: {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileImageVC") as! ProfileImageViewController
             self.navigationController?.pushViewController(resultViewController, animated: true)
             return
         }) { (errorMsg) in
