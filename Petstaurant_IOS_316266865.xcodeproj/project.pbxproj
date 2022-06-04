@@ -137,6 +137,7 @@
 		921823D22843EAF00019D36D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9293FC742843755C007FC5B1 /* ViewController.swift */,
 				9293FC9E284391B1007FC5B1 /* DetailViewController.swift */,
 				9293FCA0284391CB007FC5B1 /* AboutViewController.swift */,
 				9293FCA2284391DE007FC5B1 /* NewPostViewController.swift */,
@@ -146,6 +147,14 @@
 				921823D52843EBD20019D36D /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		92281428284B3B1D00ED0AA2 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				92281426284B366800ED0AA2 /* DogReviews.mp4 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		9293FC642843755C007FC5B1 = {
@@ -169,12 +178,11 @@
 			children = (
 				921823D22843EAF00019D36D /* ViewControllers */,
 				921823CD2843C9C70019D36D /* Model */,
+				92281428284B3B1D00ED0AA2 /* Media */,
 				9293FC702843755C007FC5B1 /* AppDelegate.swift */,
 				9293FC722843755C007FC5B1 /* SceneDelegate.swift */,
-				9293FC742843755C007FC5B1 /* ViewController.swift */,
 				9293FC762843755C007FC5B1 /* Main.storyboard */,
 				9293FC792843755E007FC5B1 /* Assets.xcassets */,
-				92281426284B366800ED0AA2 /* DogReviews.mp4 */,
 				9293FC7B2843755E007FC5B1 /* LaunchScreen.storyboard */,
 				9293FC7E2843755E007FC5B1 /* Info.plist */,
 				9293FCA4284391F5007FC5B1 /* MainSegueProtocol.swift */,
