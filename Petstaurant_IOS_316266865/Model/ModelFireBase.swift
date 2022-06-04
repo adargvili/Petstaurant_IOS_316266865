@@ -27,20 +27,26 @@ class ModelFirebase{
             }
             else{
                 let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
-                self.db.collection("Users").document(user.id!).setData(
-                    user.toJson())
-                { err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        print("Document added with")
-                    }
-                    onSuccess()
+                self.saveUserOnDB(user: user){}
+                onSuccess()
                 }
             }
         }
         
+    func saveUserOnDB(user:User, completion:@escaping ()->Void){
+        db.collection("users").document(user.id!).setData(
+        user.toJson())
+    { err in
+        if let err = err {
+            print("Error adding document: \(err)")
+        } else {
+            print("Document added with")
+        }
+        completion()
     }
+    }
+    
+
     
     func loginUser(email:String, password:String,  onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -76,7 +82,7 @@ class ModelFirebase{
     
     
     func getAllPosts(completion:@escaping ([Post])->Void){
-        db.collection("Posts").getDocuments() { (querySnapshot, err) in
+        db.collection("posts").getDocuments() { (querySnapshot, err) in
             var posts = [Post]()
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -91,8 +97,8 @@ class ModelFirebase{
         }
     }
     
-    func addPostToList(post:Post, completion:@escaping ()->Void){
-        db.collection("Posts").document(post.id!).setData(
+    func savePostOnDB(post:Post, completion:@escaping ()->Void){
+        db.collection("posts").document(post.id!).setData(
             post.toJson())
         { err in
             if let err = err {

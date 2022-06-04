@@ -65,8 +65,14 @@ class Model{
         }
     }
     
-    func addPostToList(post:Post, completion: @escaping ()->Void){
-        firebaseModel.addPostToList(post: post){
+    func saveUserOnDB(user:User, completion: @escaping ()->Void){
+        firebaseModel.saveUserOnDB(user: user){
+            completion()
+        }
+    }
+    
+    func savePostOnDB(post:Post, completion: @escaping ()->Void){
+        firebaseModel.savePostOnDB(post: post){
             completion()
             Model.postDataNotification.post()
         }
