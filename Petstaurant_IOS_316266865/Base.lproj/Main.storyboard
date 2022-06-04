@@ -153,10 +153,13 @@
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save" subtitle="">
+                                        <buttonConfiguration key="configuration" style="plain" title="Continue" subtitle="">
                                             <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
                                             <color key="baseForegroundColor" name="AccentColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="continueBtnTapped:" destination="vaX-BG-8NV" eventType="touchUpInside" id="Rix-7n-Mat"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -175,24 +178,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rxw-mM-eOv"/>
+                    <connections>
+                        <outlet property="continueBtn" destination="qT1-fT-A0d" id="z2f-y9-Oxi"/>
+                        <outlet property="porfieImageAvatar" destination="okh-cS-3L1" id="iJU-Wc-Q8B"/>
+                        <outlet property="profileCameraImage" destination="JPc-mv-Rgb" id="K6T-vy-dbK"/>
+                        <outlet property="profileGalleryImage" destination="u4o-NN-cM6" id="eB3-lg-E07"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxE-xB-DFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="-331"/>
+            <point key="canvasLocation" x="332" y="-362"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-i3-Ufp">
-                                <rect key="frame" x="20" y="0.0" width="374" height="754"/>
+                                <rect key="frame" x="20" y="88" width="374" height="720"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ze-dQI">
-                                <rect key="frame" x="20" y="753" width="374" height="67"/>
+                                <rect key="frame" x="20" y="807" width="374" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14N-4J-af3" userLabel="homeButton">
                                         <rect key="frame" x="41" y="11" width="45" height="45"/>
@@ -234,7 +243,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPW-kb-2lu" userLabel="addButton">
-                                <rect key="frame" x="166.5" y="698" width="81" height="122"/>
+                                <rect key="frame" x="166.5" y="752" width="81" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6gF-s6-8ye"/>
                                     <constraint firstAttribute="height" constant="122" id="fNZ-0V-EGi"/>
@@ -739,19 +748,6 @@
             </objects>
             <point key="canvasLocation" x="-465.21739130434787" y="88.392857142857139"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3xK-13-9IQ">
-            <objects>
-                <navigationController id="Dhk-EG-QwM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rfc-1d-gPk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T8i-3f-tgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="267" y="342"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="8Bz-WM-YNy">
             <objects>
@@ -867,7 +863,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yqu-Pc-z1J"/>
+        <segue reference="OMd-Ct-iiH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemYellowColor"/>
     <resources>
