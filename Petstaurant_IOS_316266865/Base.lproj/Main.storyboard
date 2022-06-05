@@ -116,17 +116,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QVu-LJ-RlL">
-                                <rect key="frame" x="10" y="84" width="394" height="615"/>
+                                <rect key="frame" x="10" y="84" width="394" height="618"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="okh-cS-3L1">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="520"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="523"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="520" id="48s-PT-BC8"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="520" id="WzB-IE-C3a"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z48-XH-jan">
-                                        <rect key="frame" x="0.0" y="530" width="394" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="533" width="394" height="37.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4o-NN-cM6">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="37.5"/>
@@ -160,7 +160,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT1-fT-A0d">
-                                        <rect key="frame" x="0.0" y="577.5" width="394" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="580.5" width="394" height="37.5"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
@@ -313,84 +313,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="694"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVi-fu-sRA">
-                                <rect key="frame" x="20" y="324" width="52" height="33"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Title">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=":">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="24" name="Avenir-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6Q-Q2-ShH">
-                                <rect key="frame" x="20" y="377" width="137.5" height="33"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Description:">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="24" name="Avenir-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="bla bla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-lQ-BcF">
-                                <rect key="frame" x="77" y="324" width="273" height="33"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Se-Z7y">
-                                <rect key="frame" x="20" y="88" width="334" height="215"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-br-9s8">
+                                <rect key="frame" x="10" y="128" width="354" height="406"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Se-Z7y">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="135.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-tI-KYA">
+                                        <rect key="frame" x="0.0" y="135.5" width="354" height="135"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVi-fu-sRA">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="135"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Title">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=":">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="24" name="Avenir-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="bla bla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-lQ-BcF">
+                                                <rect key="frame" x="52" y="0.0" width="302" height="135"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-gL-dwR">
+                                        <rect key="frame" x="0.0" y="270.5" width="354" height="135.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6Q-Q2-ShH">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="135.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Description:">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="24" name="Avenir-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="bla bla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-WL-SKg">
+                                                <rect key="frame" x="137.5" y="0.0" width="216.5" height="135.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="aYb-ZS-Suv"/>
-                                    <constraint firstAttribute="width" constant="334" id="w49-ue-6ao"/>
+                                    <constraint firstItem="xb7-tI-KYA" firstAttribute="height" secondItem="SDl-Se-Z7y" secondAttribute="height" id="0lC-va-JeO"/>
+                                    <constraint firstItem="qmP-gL-dwR" firstAttribute="width" secondItem="SDl-Se-Z7y" secondAttribute="width" id="IlP-Ub-82W"/>
+                                    <constraint firstItem="xb7-tI-KYA" firstAttribute="width" secondItem="SDl-Se-Z7y" secondAttribute="width" id="OKO-f1-FIS"/>
+                                    <constraint firstItem="qmP-gL-dwR" firstAttribute="height" secondItem="SDl-Se-Z7y" secondAttribute="height" id="su7-nh-IR3"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="bla bla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-WL-SKg">
-                                <rect key="frame" x="162.5" y="377" width="187.5" height="33"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2cu-It-F4l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iVi-fu-sRA" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="20" id="163-i5-36y"/>
-                            <constraint firstItem="wG4-WL-SKg" firstAttribute="leading" secondItem="x6Q-Q2-ShH" secondAttribute="trailing" constant="5" id="3z4-Hr-Xe2"/>
-                            <constraint firstItem="x6Q-Q2-ShH" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="20" id="4Ef-1u-4hN"/>
-                            <constraint firstItem="2cu-It-F4l" firstAttribute="trailing" secondItem="SDl-Se-Z7y" secondAttribute="trailing" constant="20" id="4TT-pB-R5B"/>
-                            <constraint firstItem="pcK-lQ-BcF" firstAttribute="leading" secondItem="iVi-fu-sRA" secondAttribute="trailing" constant="5" id="6Vr-rT-I4H"/>
-                            <constraint firstItem="iVi-fu-sRA" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="20" id="7kf-gd-VKe"/>
-                            <constraint firstItem="2cu-It-F4l" firstAttribute="trailing" secondItem="SDl-Se-Z7y" secondAttribute="trailing" constant="20" id="7vK-OT-PLZ"/>
-                            <constraint firstItem="wG4-WL-SKg" firstAttribute="leading" secondItem="x6Q-Q2-ShH" secondAttribute="trailing" constant="5" id="B2b-dh-K1R"/>
-                            <constraint firstItem="2cu-It-F4l" firstAttribute="trailing" secondItem="wG4-WL-SKg" secondAttribute="trailing" constant="24" id="C1R-es-Ugu"/>
-                            <constraint firstItem="SDl-Se-Z7y" firstAttribute="top" secondItem="2cu-It-F4l" secondAttribute="top" id="UPm-lu-9rZ"/>
-                            <constraint firstItem="x6Q-Q2-ShH" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="20" id="X2L-YP-fju"/>
-                            <constraint firstItem="2cu-It-F4l" firstAttribute="trailing" secondItem="wG4-WL-SKg" secondAttribute="trailing" constant="24" id="X7u-aY-sL4"/>
-                            <constraint firstItem="SDl-Se-Z7y" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="20" id="XLr-6S-B4t"/>
-                            <constraint firstItem="SDl-Se-Z7y" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="20" id="ZmG-3M-hBM"/>
-                            <constraint firstItem="x6Q-Q2-ShH" firstAttribute="top" secondItem="iVi-fu-sRA" secondAttribute="bottom" constant="20" id="aW4-Bt-VmR"/>
-                            <constraint firstItem="pcK-lQ-BcF" firstAttribute="leading" secondItem="iVi-fu-sRA" secondAttribute="trailing" constant="5" id="cqU-IK-yW3"/>
-                            <constraint firstItem="2cu-It-F4l" firstAttribute="trailing" secondItem="pcK-lQ-BcF" secondAttribute="trailing" constant="24" id="dPf-vV-MkM"/>
-                            <constraint firstItem="wG4-WL-SKg" firstAttribute="top" secondItem="iVi-fu-sRA" secondAttribute="bottom" constant="20" id="f3T-Ox-YDG"/>
-                            <constraint firstItem="iVi-fu-sRA" firstAttribute="top" secondItem="SDl-Se-Z7y" secondAttribute="bottom" constant="21" id="poG-q9-0nw"/>
-                            <constraint firstItem="pcK-lQ-BcF" firstAttribute="top" secondItem="SDl-Se-Z7y" secondAttribute="bottom" constant="21" id="vxa-el-5Ro"/>
-                            <constraint firstItem="wG4-WL-SKg" firstAttribute="leading" secondItem="x6Q-Q2-ShH" secondAttribute="trailing" constant="5" id="xSC-To-Klu"/>
-                            <constraint firstItem="iVi-fu-sRA" firstAttribute="top" secondItem="SDl-Se-Z7y" secondAttribute="bottom" constant="21" id="xmp-nQ-aB6"/>
+                            <constraint firstItem="UUG-br-9s8" firstAttribute="top" secondItem="2cu-It-F4l" secondAttribute="top" constant="40" id="0pM-Iv-DxY"/>
+                            <constraint firstAttribute="trailing" secondItem="UUG-br-9s8" secondAttribute="trailing" constant="10" id="2VB-f0-8wV"/>
+                            <constraint firstItem="UUG-br-9s8" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="10" id="dia-bG-k9z"/>
+                            <constraint firstItem="2cu-It-F4l" firstAttribute="bottom" secondItem="UUG-br-9s8" secondAttribute="bottom" constant="160" id="fAw-Ia-lVe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Some Details.." id="fwn-dT-QLZ"/>
