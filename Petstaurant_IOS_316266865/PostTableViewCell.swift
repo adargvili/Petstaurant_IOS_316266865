@@ -8,19 +8,19 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var postUserNameLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
-    @IBOutlet weak var postDescriptionLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
-    
-    var postDescription = ""{
-        didSet{
-            if postDescriptionLabel != nil{postDescriptionLabel.text = postDescription}
-        }
-    }
     
     var postTitle = ""{
         didSet{
             if postTitleLabel != nil{postTitleLabel.text = postTitle}
+        }
+    }
+    
+    var postUserName = ""{
+        didSet{
+            if postUserNameLabel != nil{postUserNameLabel.text = postUserName}
         }
     }
     
@@ -30,8 +30,8 @@ class PostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        postUserNameLabel.text = postUserName
         postTitleLabel.text = postTitle
-        postDescriptionLabel.text = postDescription
         
     }
 

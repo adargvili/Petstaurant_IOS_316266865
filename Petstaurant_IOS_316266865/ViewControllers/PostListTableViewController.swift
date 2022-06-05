@@ -39,11 +39,11 @@ class PostListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
-        postCell?.postDescription = posts[indexPath.row].postTitle ?? ""
+        postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
         Model.instance.getUser(uid:posts[indexPath.row].uid!){
             user in
             let u = user
-            postCell?.postTitle = u.userName ?? ""
+            postCell?.postUserName = u.userName ?? ""
             if let urlStr = u.profileImageUrl {
                 let url = URL(string: urlStr)
                 postCell?.avatarImage?.kf.setImage(with: url)
