@@ -19,8 +19,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var navBtn: UINavigationItem!
     @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var postDescriptionLabel: UILabel!
-    @IBOutlet weak var postTitleLabel: UILabel!
+    @IBOutlet weak var postDescriptionLabel: UITextField!
+    @IBOutlet weak var postTitleLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         avatar.layer.cornerRadius=40
