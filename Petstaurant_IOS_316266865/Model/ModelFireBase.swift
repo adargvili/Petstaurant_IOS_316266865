@@ -81,6 +81,19 @@ class ModelFirebase{
     }
     
     
+    func updateUserOnDB(uid: String, key: String, value: String, completion:@escaping ()->Void){
+        db.collection("users").document(uid).updateData([key : value])
+        { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document updated")
+            }
+            completion()
+        }
+    }
+    
+    
     func getAllPosts(completion:@escaping ([Post])->Void){
         db.collection("posts").getDocuments() { (querySnapshot, err) in
             var posts = [Post]()
@@ -110,9 +123,8 @@ class ModelFirebase{
         }
     }
     
-    
-    func updateUserOnDB(uid: String, key: String, value: String, completion:@escaping ()->Void){
-        db.collection("users").document(uid).updateData([key : value])
+    func updatePostOnDB(id: String, key: String, value: String, completion:@escaping ()->Void){
+        db.collection("posts").document(id).updateData([key : value])
         { err in
             if let err = err {
                 print("Error updating document: \(err)")
@@ -122,6 +134,7 @@ class ModelFirebase{
             completion()
         }
     }
+
     
     func getPost(byId:String)->Post?{
         return nil

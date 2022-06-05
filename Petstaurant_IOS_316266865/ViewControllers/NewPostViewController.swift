@@ -20,8 +20,7 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
         Model.instance.savePostOnDB(post: post){}
         if let image = selectedImage{
             Model.instance.uploadImage(name: post.id!, image: image) { url in
-                post.postImage = url
-                Model.instance.savePostOnDB(post: post){}
+                Model.instance.updatePostOnDB(id: post.id!, key: "postImage", value: url){}
             }
         }
         let viewController = self.navigationController?.parent as! ViewController

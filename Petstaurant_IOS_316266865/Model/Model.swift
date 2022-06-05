@@ -93,6 +93,12 @@ class Model{
         return firebaseModel.getPost(byId: byId)
     }
     
+    func updatePostOnDB(id:String, key:String, value:String, completion: @escaping ()->Void){
+        firebaseModel.updatePostOnDB(id: id, key: key, value: value){
+            completion()
+        }
+    }
+    
     func delete(post:Post){
         firebaseModel.delete(post: post)
     }
