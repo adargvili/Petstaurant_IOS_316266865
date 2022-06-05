@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
             if postDescriptionLabel != nil {postDescriptionLabel.text = post?.postDescription}
         }
     }
-
+    
     @IBOutlet weak var navBtn: UINavigationItem!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var postDescriptionLabel: UILabel!
@@ -34,8 +34,18 @@ class DetailViewController: UIViewController {
             avatar.image = UIImage(named: "userAvatar")
         }
         
+//        if post?.uid == String(UserDefaults.standard.string(forKey: "uid")!){
+//            postDescriptionLabel.isUserInteractionEnabled = true
+//            postTitleLabel.isUserInteractionEnabled = true
+//
+//        }
+//        else {
+//            postDescriptionLabel.isUserInteractionEnabled = false
+//            postTitleLabel.isUserInteractionEnabled = true
+//        }
+        
     }
     
-
+    
 }
 

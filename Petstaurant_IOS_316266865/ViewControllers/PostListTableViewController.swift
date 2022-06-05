@@ -51,6 +51,14 @@ class PostListTableViewController: UITableViewController {
                 postCell?.avatarImage.image = UIImage(named: "userAvatar")
             }
         }
+//        postCell?.layer.borderWidth = 1
+//        postCell?.layer.borderColor = UIColor.systemYellow.cgColor
+//        if posts[indexPath.row].uid == String(UserDefaults.standard.string(forKey: "uid")!){
+//            postCell?.backgroundColor = ç
+//        }
+//        else {
+//            postCell?.backgroundColor = UIColor.black
+//        }
         return postCell!
     }
     
