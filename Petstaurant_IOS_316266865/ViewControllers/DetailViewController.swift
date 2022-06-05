@@ -21,6 +21,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var postDescriptionLabel: UITextField!
     @IBOutlet weak var postTitleLabel: UITextField!
+    @IBOutlet weak var cancelDetailBtn: UIButton!
+    @IBOutlet weak var SaveDetailBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         avatar.layer.cornerRadius=40
@@ -37,15 +40,40 @@ class DetailViewController: UIViewController {
         if post?.uid == String(UserDefaults.standard.string(forKey: "uid")!){
             postDescriptionLabel.isEnabled = true
             postTitleLabel.isEnabled = true
+            cancelDetailBtn.isHidden = false
+            SaveDetailBtn.isHidden = false
 
         }
         else {
             postDescriptionLabel.isEnabled = false
             postTitleLabel.isEnabled = false
+            cancelDetailBtn.isHidden = true
+            SaveDetailBtn.isHidden = true
         }
+        
+        
+        
         
     }
     
+    @IBAction func cancelDetailBtnTapped(_ sender: Any) {
+        
+//        Model.instance.updatePostOnDB(id: post?.id,
+//                                      key: "postDescription",
+//                                      value: postDescriptionLabel.text!){}
+//        
+//        Model.instance.updatePostOnDB(id: post?.id,
+//                                      key: "postTitle",
+//                                      value: postTitleLabel.text!){}
+        
+        
+        
+    }
     
+    @IBAction func saveDetailBtnTapped(_ sender: Any) {
+        
+        
+        
+    }
 }
 
