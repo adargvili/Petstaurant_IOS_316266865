@@ -34,15 +34,15 @@ class DetailViewController: UIViewController {
             avatar.image = UIImage(named: "userAvatar")
         }
         
-//        if post?.uid == String(UserDefaults.standard.string(forKey: "uid")!){
-//            postDescriptionLabel.isUserInteractionEnabled = true
-//            postTitleLabel.isUserInteractionEnabled = true
-//
-//        }
-//        else {
-//            postDescriptionLabel.isUserInteractionEnabled = false
-//            postTitleLabel.isUserInteractionEnabled = true
-//        }
+        if post?.uid == String(UserDefaults.standard.string(forKey: "uid")!){
+            postDescriptionLabel.isEnabled = true
+            postTitleLabel.isEnabled = true
+
+        }
+        else {
+            postDescriptionLabel.isEnabled = false
+            postTitleLabel.isEnabled = false
+        }
         
     }
     
