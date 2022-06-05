@@ -71,6 +71,13 @@ class Model{
         }
     }
     
+    
+    func updateUserOnDB(uid:String, key:String, value:String, completion: @escaping ()->Void){
+        firebaseModel.updateUserOnDB(uid: uid, key: key, value: value){
+            completion()
+        }
+    }
+    
     func savePostOnDB(post:Post, completion: @escaping ()->Void){
         firebaseModel.savePostOnDB(post: post){
             completion()

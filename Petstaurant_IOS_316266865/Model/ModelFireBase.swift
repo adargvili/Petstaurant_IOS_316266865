@@ -38,9 +38,9 @@ class ModelFirebase{
         user.toJson())
     { err in
         if let err = err {
-            print("Error adding document: \(err)")
+            print("Error saving document: \(err)")
         } else {
-            print("Document added with")
+            print("Document saved")
         }
         completion()
     }
@@ -102,9 +102,22 @@ class ModelFirebase{
             post.toJson())
         { err in
             if let err = err {
-                print("Error adding document: \(err)")
+                print("Error saving document: \(err)")
             } else {
-                print("Document added with")
+                print("Document saved")
+            }
+            completion()
+        }
+    }
+    
+    
+    func updateUserOnDB(uid: String, key: String, value: String, completion:@escaping ()->Void){
+        db.collection("users").document(uid).updateData([key : value])
+        { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document updated")
             }
             completion()
         }
