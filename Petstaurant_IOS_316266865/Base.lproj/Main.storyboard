@@ -116,17 +116,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QVu-LJ-RlL">
-                                <rect key="frame" x="10" y="84" width="394" height="615"/>
+                                <rect key="frame" x="10" y="84" width="394" height="618"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="okh-cS-3L1">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="520"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="523"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="520" id="48s-PT-BC8"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="520" id="WzB-IE-C3a"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z48-XH-jan">
-                                        <rect key="frame" x="0.0" y="530" width="394" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="533" width="394" height="37.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4o-NN-cM6">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="37.5"/>
@@ -160,7 +160,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT1-fT-A0d">
-                                        <rect key="frame" x="0.0" y="577.5" width="394" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="580.5" width="394" height="37.5"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
@@ -362,7 +362,7 @@
                                                     <color key="baseForegroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="saveDetailBtnTapped:" destination="CXJ-zj-A2S" eventType="touchUpInside" id="K3n-y3-YLL"/>
+                                                    <action selector="cancelDetailTapped:" destination="CXJ-zj-A2S" eventType="touchUpInside" id="61q-Ef-GtI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-BM-7hU">
@@ -375,7 +375,7 @@
                                                     <color key="baseForegroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="cancelDetailBtnTapped:" destination="CXJ-zj-A2S" eventType="touchUpInside" id="mPx-s3-pP5"/>
+                                                    <action selector="saveDetailTapped:" destination="CXJ-zj-A2S" eventType="touchUpInside" id="TGo-Y7-erU"/>
                                                 </connections>
                                             </button>
                                         </subviews>

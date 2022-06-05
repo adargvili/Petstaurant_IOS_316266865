@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
             postTitleLabel.isEnabled = true
             cancelDetailBtn.isHidden = false
             SaveDetailBtn.isHidden = false
-
+            
         }
         else {
             postDescriptionLabel.isEnabled = false
@@ -56,24 +56,29 @@ class DetailViewController: UIViewController {
         
     }
     
-    @IBAction func cancelDetailBtnTapped(_ sender: Any) {
+    
+    @IBAction func saveDetailTapped(_ sender: Any) {
         
-//        Model.instance.updatePostOnDB(id: post?.id,
-//                                      key: "postDescription",
-//                                      value: postDescriptionLabel.text!){}
-//        
-//        Model.instance.updatePostOnDB(id: post?.id,
-//                                      key: "postTitle",
-//                                      value: postTitleLabel.text!){}
+        Model.instance.updatePostOnDB(id: post?.id ?? "",
+                                      key: "postDescription",
+                                      value: postDescriptionLabel.text!){}
         
-        
+        Model.instance.updatePostOnDB(id: post?.id ?? "",
+                                      key: "postTitle",
+                                      value: postTitleLabel.text!){}
+        let viewController = self.navigationController?.parent as! ViewController
+        viewController.removeSubViews()
+        viewController.performSegue(withIdentifier: "postListSegue", sender: self)
         
     }
     
-    @IBAction func saveDetailBtnTapped(_ sender: Any) {
+    @IBAction func cancelDetailTapped(_ sender: Any) {
         
-        
-        
+        let viewController = self.navigationController?.parent as! ViewController
+        viewController.removeSubViews()
+        viewController.performSegue(withIdentifier: "postListSegue", sender: self)
     }
+    
+    
 }
 
