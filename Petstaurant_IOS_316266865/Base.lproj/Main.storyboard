@@ -317,34 +317,69 @@
                                 <rect key="frame" x="10" y="128" width="354" height="406"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Se-Z7y">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="113"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="99"/>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S3x-Nz-TWQ">
+                                        <rect key="frame" x="0.0" y="109" width="354" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-8Y-j87">
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="31"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="galleryDetailBtnTapped:" destination="CXJ-zj-A2S" eventType="touchUpInside" id="P1Q-Vj-6pQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vag-Me-59G">
+                                                <rect key="frame" x="182" y="0.0" width="172" height="31"/>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="camera" catalog="system" symbolScale="large"/>
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="cameraDetailBtnTapped:" destination="CXJ-zj-A2S" eventType="touchUpInside" id="GjU-3B-ydR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vag-Me-59G" firstAttribute="height" secondItem="1Yk-8Y-j87" secondAttribute="height" id="RRI-kC-Mnh"/>
+                                            <constraint firstItem="vag-Me-59G" firstAttribute="width" secondItem="1Yk-8Y-j87" secondAttribute="width" id="nH1-FE-Ten"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-tI-KYA">
-                                        <rect key="frame" x="0.0" y="123" width="354" height="112.5"/>
+                                        <rect key="frame" x="0.0" y="150" width="354" height="99.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVi-fu-sRA">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="112.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="99.5"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVy-pj-hik">
-                                                <rect key="frame" x="92" y="0.0" width="262" height="112.5"/>
+                                                <rect key="frame" x="92" y="0.0" width="262" height="99.5"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="8"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-gL-dwR">
-                                        <rect key="frame" x="0.0" y="245.5" width="354" height="113"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="354" height="99"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6Q-Q2-ShH">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="113"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="99"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-z2-pvf">
-                                                <rect key="frame" x="92" y="0.0" width="262" height="113"/>
+                                                <rect key="frame" x="92" y="0.0" width="262" height="99"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="10"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -388,6 +423,7 @@
                                 <constraints>
                                     <constraint firstItem="xb7-tI-KYA" firstAttribute="height" secondItem="SDl-Se-Z7y" secondAttribute="height" id="0lC-va-JeO"/>
                                     <constraint firstItem="zHp-Vb-qnB" firstAttribute="width" secondItem="xb7-tI-KYA" secondAttribute="width" id="5t2-ob-IGk"/>
+                                    <constraint firstItem="xb7-tI-KYA" firstAttribute="width" secondItem="S3x-Nz-TWQ" secondAttribute="width" id="FYO-XN-v3E"/>
                                     <constraint firstItem="qmP-gL-dwR" firstAttribute="width" secondItem="SDl-Se-Z7y" secondAttribute="width" id="IlP-Ub-82W"/>
                                     <constraint firstItem="xb7-tI-KYA" firstAttribute="width" secondItem="SDl-Se-Z7y" secondAttribute="width" id="OKO-f1-FIS"/>
                                     <constraint firstItem="qmP-gL-dwR" firstAttribute="width" secondItem="xb7-tI-KYA" secondAttribute="width" id="RZg-gR-Q05"/>
@@ -411,7 +447,9 @@
                     <connections>
                         <outlet property="SaveDetailBtn" destination="VDN-BM-7hU" id="CX4-dL-muK"/>
                         <outlet property="avatar" destination="SDl-Se-Z7y" id="MJX-WK-Fsh"/>
+                        <outlet property="cameraDetailBtn" destination="vag-Me-59G" id="NjZ-xg-7IX"/>
                         <outlet property="cancelDetailBtn" destination="xgD-8V-cy4" id="pqT-IC-QNi"/>
+                        <outlet property="galleryDetailBtn" destination="1Yk-8Y-j87" id="FCm-h7-KeQ"/>
                         <outlet property="navBtn" destination="fwn-dT-QLZ" id="Oeg-BO-FnI"/>
                         <outlet property="postDescriptionLabel" destination="ySS-z2-pvf" id="FCl-6S-RDd"/>
                         <outlet property="postTitleLabel" destination="qVy-pj-hik" id="4Dt-cY-Aoo"/>

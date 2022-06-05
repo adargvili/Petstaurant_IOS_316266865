@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     var post:Post?{
         didSet{
@@ -23,6 +23,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var postTitleLabel: UITextField!
     @IBOutlet weak var cancelDetailBtn: UIButton!
     @IBOutlet weak var SaveDetailBtn: UIButton!
+    @IBOutlet weak var galleryDetailBtn: UIButton!
+    @IBOutlet weak var cameraDetailBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,8 @@ class DetailViewController: UIViewController {
             postTitleLabel.isEnabled = true
             cancelDetailBtn.isHidden = false
             SaveDetailBtn.isHidden = false
+            galleryDetailBtn.isHidden = false
+            cameraDetailBtn.isHidden = false
             
         }
         else {
@@ -49,6 +53,8 @@ class DetailViewController: UIViewController {
             postTitleLabel.isEnabled = false
             cancelDetailBtn.isHidden = true
             SaveDetailBtn.isHidden = true
+            galleryDetailBtn.isHidden = true
+            cameraDetailBtn.isHidden = true
         }
         
         
@@ -66,6 +72,12 @@ class DetailViewController: UIViewController {
         Model.instance.updatePostOnDB(id: post?.id ?? "",
                                       key: "postTitle",
                                       value: postTitleLabel.text!){}
+        
+        if let image = selectedImage{
+            Model.instance.uploadImage(name: post?.id ?? "", image: image) { url in
+                Model.instance.updatePostOnDB(id: (self.post?.id)!, key: "postImage", value: url){}
+            }
+        }
         let viewController = self.navigationController?.parent as! ViewController
         viewController.removeSubViews()
         viewController.performSegue(withIdentifier: "postListSegue", sender: self)
@@ -79,6 +91,39 @@ class DetailViewController: UIViewController {
         viewController.performSegue(withIdentifier: "postListSegue", sender: self)
     }
     
+    
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    var selectedImage: UIImage?
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.avatar.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
+    
+    @IBAction func galleryDetailBtnTapped(_ sender: Any) {
+        takePicture(source: .photoLibrary)
+    }
+    
+    
+    
+    @IBAction func cameraDetailBtnTapped(_ sender: Any) {
+        takePicture(source: .camera)
+    }
     
 }
 
