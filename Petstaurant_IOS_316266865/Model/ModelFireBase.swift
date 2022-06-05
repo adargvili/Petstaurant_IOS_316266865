@@ -110,6 +110,21 @@ class ModelFirebase{
         }
     }
     
+    func getUser(uid:String, completion:@escaping (User)->Void){
+        db.collection("users").whereField("id", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+            var user = User()
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion(user)
+            } else {
+                for document in querySnapshot!.documents {
+                    let user = User.FromJson(json: document.data())
+                    completion(user)}
+            }
+        }
+    }
+    
+    
     func savePostOnDB(post:Post, completion:@escaping ()->Void){
         db.collection("posts").document(post.id!).setData(
             post.toJson())

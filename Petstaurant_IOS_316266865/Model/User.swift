@@ -32,7 +32,7 @@ extension User{
         s.id = json["id"] as? String
         s.email = json["email"] as? String
         s.userName = json["userName"] as? String
-        s.profileImageUrl = json["image"] as? String
+        s.profileImageUrl = json["profileImageUrl"] as? String
         return s
     }
     

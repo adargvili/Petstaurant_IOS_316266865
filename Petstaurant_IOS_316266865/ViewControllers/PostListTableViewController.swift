@@ -41,11 +41,15 @@ class PostListTableViewController: UITableViewController {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
         postCell?.postDescription = posts[indexPath.row].postDescription ?? ""
         postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
-        if let urlStr = posts[indexPath.row].postImage {
-            let url = URL(string: urlStr)
-            postCell?.avatarImage?.kf.setImage(with: url)
-        }else{
-            postCell?.avatarImage.image = UIImage(named: "userAvatar")
+        Model.instance.getUser(uid:posts[indexPath.row].uid!){
+            user in
+            let u = user
+            if let urlStr = u.profileImageUrl {
+                let url = URL(string: urlStr)
+                postCell?.avatarImage?.kf.setImage(with: url)
+            }else{
+                postCell?.avatarImage.image = UIImage(named: "userAvatar")
+            }
         }
         return postCell!
     }

@@ -78,6 +78,10 @@ class Model{
         }
     }
     
+    func getUser(uid:String, completion:@escaping (User)->Void){
+        return firebaseModel.getUser(uid:uid, completion: completion)
+    }
+    
     func savePostOnDB(post:Post, completion: @escaping ()->Void){
         firebaseModel.savePostOnDB(post: post){
             completion()
