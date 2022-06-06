@@ -15,7 +15,17 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var continueBtn: UIButton!
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
+        Model.instance.getUser(uid:String(UserDefaults.standard.string(forKey: "uid")!)){
+            user in
+            let u = user
+            if u.profileImageUrl != "" && u.profileImageUrl != nil {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+                self.navigationController?.pushViewController(resultViewController, animated: true)
+            }
+        }
     }
 
     @IBAction func continueBtnTapped(_ sender: Any) {

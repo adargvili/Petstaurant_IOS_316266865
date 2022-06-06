@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         Model.instance.tfBorderColor(textField: emailLoginTextField){}
         Model.instance.tfBorderColor(textField: passwordLoginTextField){}
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -61,11 +61,6 @@ class ModelFirebase{
                         UserDefaults.standard.set(user.email, forKey: "email")
                         UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                         UserDefaults.standard.synchronize()
-                    } else {
-                        UserDefaults.standard.set("", forKey: "uid")
-                        UserDefaults.standard.set("", forKey: "email")
-                        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-                        UserDefaults.standard.synchronize()
                     }
                 }
                 onSuccess()
@@ -75,10 +70,13 @@ class ModelFirebase{
     }
     
     func logoutUser(completion:@escaping ()->Void){
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        UserDefaults.standard.synchronize()
+        
         do {
             try Auth.auth().signOut()
+            UserDefaults.standard.set("", forKey: "uid")
+            UserDefaults.standard.set("", forKey: "email")
+            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+            UserDefaults.standard.synchronize()
             completion()
         } catch let err {
             print(err)

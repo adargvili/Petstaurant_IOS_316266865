@@ -21,10 +21,6 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Model.instance.tfBorderColor(textField: emailTextField){}
-        Model.instance.tfBorderColor(textField: nameTextField){}
-        Model.instance.tfBorderColor(textField: passwordTextField){}
-        Model.instance.tfBorderColor(textField: confirmPasswordTextField){}
         let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(userLoginStatus)
         {
@@ -32,6 +28,11 @@ class SignUpViewController: UIViewController {
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
+        Model.instance.tfBorderColor(textField: emailTextField){}
+        Model.instance.tfBorderColor(textField: nameTextField){}
+        Model.instance.tfBorderColor(textField: passwordTextField){}
+        Model.instance.tfBorderColor(textField: confirmPasswordTextField){}
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
