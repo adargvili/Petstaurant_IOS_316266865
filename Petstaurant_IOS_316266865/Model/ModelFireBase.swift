@@ -29,24 +29,24 @@ class ModelFirebase{
                 let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
                 self.saveUserOnDB(user: user){}
                 onSuccess()
-                }
             }
         }
-        
-    func saveUserOnDB(user:User, completion:@escaping ()->Void){
-        db.collection("users").document(user.id!).setData(
-        user.toJson())
-    { err in
-        if let err = err {
-            print("Error saving document: \(err)")
-        } else {
-            print("Document saved")
-        }
-        completion()
-    }
     }
     
-
+    func saveUserOnDB(user:User, completion:@escaping ()->Void){
+        db.collection("users").document(user.id!).setData(
+            user.toJson())
+        { err in
+            if let err = err {
+                print("Error saving document: \(err)")
+            } else {
+                print("Document saved")
+            }
+            completion()
+        }
+    }
+    
+    
     
     func loginUser(email:String, password:String,  onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -125,6 +125,7 @@ class ModelFirebase{
     }
     
     
+    
     func savePostOnDB(post:Post, completion:@escaping ()->Void){
         db.collection("posts").document(post.id!).setData(
             post.toJson())
@@ -149,13 +150,23 @@ class ModelFirebase{
             completion()
         }
     }
-
+    
     
     func getPost(byId:String)->Post?{
         return nil
     }
     
-    func delete(post:Post){
+    func deletePost(id:String, completion:@escaping ()->Void){
+        db.collection("posts").whereField("id", isEqualTo: id).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion()
+            } else {
+                for document in querySnapshot!.documents {
+                    document.reference.delete()
+                }
+            }
+        }
         
     }
     

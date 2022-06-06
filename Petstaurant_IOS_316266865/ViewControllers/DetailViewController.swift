@@ -25,7 +25,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var SaveDetailBtn: UIButton!
     @IBOutlet weak var galleryDetailBtn: UIButton!
     @IBOutlet weak var cameraDetailBtn: UIButton!
-    
+    @IBOutlet weak var deleteDetailBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         avatar.layer.cornerRadius=40
@@ -34,7 +34,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         postTitleLabel.text = post?.postTitle
         if let urlStr = post?.postImage {
             let url = URL(string: urlStr)
-            avatar?.kf.setImage(with: url)
+            avatar?.kf.setImage(with: url, options:[.forceRefresh])
         }else{
             avatar.image = UIImage(named: "userAvatar")
         }
@@ -46,6 +46,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
             SaveDetailBtn.isHidden = false
             galleryDetailBtn.isHidden = false
             cameraDetailBtn.isHidden = false
+            deleteDetailBtn.isHidden = false
             
         }
         else {
@@ -55,6 +56,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
             SaveDetailBtn.isHidden = true
             galleryDetailBtn.isHidden = true
             cameraDetailBtn.isHidden = true
+            deleteDetailBtn.isHidden = true
         }
         
         
@@ -103,15 +105,15 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-
+    
     var selectedImage: UIImage?
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
         self.avatar.image = selectedImage
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     
@@ -123,6 +125,13 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func cameraDetailBtnTapped(_ sender: Any) {
         takePicture(source: .camera)
+    }
+    
+    @IBAction func deleteDetailBtnTapped(_ sender: Any) {
+        Model.instance.deletePost(id: post?.id ?? ""){}
+        let viewController = self.navigationController?.parent as! ViewController
+        viewController.removeSubViews()
+        viewController.performSegue(withIdentifier: "postListSegue", sender: self)
     }
     
 }

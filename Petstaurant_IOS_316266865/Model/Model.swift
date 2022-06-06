@@ -103,8 +103,10 @@ class Model{
         }
     }
     
-    func delete(post:Post){
-        firebaseModel.delete(post: post)
+    func deletePost(id:String, completion: @escaping ()->Void){
+        firebaseModel.deletePost(id: id){
+            completion()
+        }
     }
     
     func uploadImage(name:String, image:UIImage, callback:@escaping(_ url:String)->Void){
