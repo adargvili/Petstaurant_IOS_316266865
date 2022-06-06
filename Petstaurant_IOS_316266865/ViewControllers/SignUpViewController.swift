@@ -25,9 +25,25 @@ class SignUpViewController: UIViewController {
         Model.instance.tfBorderColor(textField: nameTextField){}
         Model.instance.tfBorderColor(textField: passwordTextField){}
         Model.instance.tfBorderColor(textField: confirmPasswordTextField){}
+        let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        if(userLoginStatus)
+        {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+            self.navigationController?.pushViewController(resultViewController, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        if(userLoginStatus)
+        {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+            self.navigationController?.pushViewController(resultViewController, animated: true)
+            
+        }
+        
         setUpVideo()
     }
     
