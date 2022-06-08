@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailLoginTextField: UITextField!
     @IBOutlet weak var passwordLoginTextField:UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var errorLoginBtn: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         Model.instance.tfBorderColor(textField: emailLoginTextField){}
@@ -36,11 +36,21 @@ class LoginViewController: UIViewController {
         fields.append(passwordLoginTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
         
         
-        if !Model.instance.validateEmptyFields(fields: fields){errorLoginBtn.text = "At least one of the fields is empty";return;}
+        if !Model.instance.validateEmptyFields(fields: fields){
+            self.popupAlert(title: "Login Error",
+                            message: "At least one of the fields is empty",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
+
         
-        if !Model.instance.validateEmail(email: emailLoginTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLoginBtn.text = "Email is not valid";return;}
+        if !Model.instance.validateEmail(email: emailLoginTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){
+            self.popupAlert(title: "Login Error",
+                            message: "Email is not valid",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
-        if !Model.instance.validatePassword(password: passwordLoginTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLoginBtn.text = "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character";return;}
+        if !Model.instance.validatePassword(password: passwordLoginTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){
+            self.popupAlert(title: "Login Error",
+                            message: "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
         
         Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!, onSuccess: {
@@ -49,7 +59,9 @@ class LoginViewController: UIViewController {
             self.navigationController?.pushViewController(resultViewController, animated: true)
             return
         }) { (errorMsg) in
-            self.errorLoginBtn.text = errorMsg
+            self.popupAlert(title: "Login Error",
+                            message: errorMsg,
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil])
             return
         }
         

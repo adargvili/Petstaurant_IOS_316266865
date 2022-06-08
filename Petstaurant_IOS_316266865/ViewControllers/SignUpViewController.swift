@@ -16,8 +16,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +30,7 @@ class SignUpViewController: UIViewController {
         Model.instance.tfBorderColor(textField: nameTextField){}
         Model.instance.tfBorderColor(textField: passwordTextField){}
         Model.instance.tfBorderColor(textField: confirmPasswordTextField){}
-      
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,18 +55,25 @@ class SignUpViewController: UIViewController {
         fields.append(confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
         
         
-        if !Model.instance.validateEmptyFields(fields: fields){errorLabel.text = "At least one of the fields is empty";return;}
+        if !Model.instance.validateEmptyFields(fields: fields){
+            self.popupAlert(title: "Sign Up Error",
+                            message: "At least one of the fields is empty",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
-        if !Model.instance.validateEmail(email: emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Email is not valid";return;}
+        if !Model.instance.validateEmail(email: emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){
+            self.popupAlert(title: "Sign Up Error",
+                            message: "Email is not valid",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
-        if !Model.instance.validatePassword(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character";return;}
+        if !Model.instance.validatePassword(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){
+            self.popupAlert(title: "Sign Up Error",
+                            message: "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
-        if !Model.instance.validatePasswordWithPasswordConfirm(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), passwordConfirm: confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Password are not matched";
-            self.popupAlert(title: "Title", message: " Oops, xxxx ", actionTitles: ["Option1","Option2","Option3"], actions:[{action1 in
-
-            },{action2 in
-
-            }, nil]);return;}
+        if !Model.instance.validatePasswordWithPasswordConfirm(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), passwordConfirm: confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){
+            self.popupAlert(title: "Sign Up Error",
+                            message: "Password are not matched",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
         Model.instance.createUser(email: emailTextField.text!, password: passwordTextField.text!, userName: nameTextField.text!,profileImageUrl: "", onSuccess: {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -76,7 +81,9 @@ class SignUpViewController: UIViewController {
             self.navigationController?.pushViewController(resultViewController, animated: true)
             return
         }) { (errorMsg) in
-            self.errorLabel.text = errorMsg
+            self.popupAlert(title: "Sign Up Error",
+                            message: errorMsg,
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil])
             return
         }
         
@@ -102,7 +109,7 @@ class SignUpViewController: UIViewController {
         videoPlayer?.isMuted = true
         videoPlayer?.playImmediately(atRate: 0.3)
     }
- 
+    
 }
 
 
