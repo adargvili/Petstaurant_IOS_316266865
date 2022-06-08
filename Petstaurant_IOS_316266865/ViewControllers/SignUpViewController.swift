@@ -63,7 +63,12 @@ class SignUpViewController: UIViewController {
         
         if !Model.instance.validatePassword(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character";return;}
         
-        if !Model.instance.validatePasswordWithPasswordConfirm(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), passwordConfirm: confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Password are not matched";return;}
+        if !Model.instance.validatePasswordWithPasswordConfirm(password: passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), passwordConfirm: confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)){errorLabel.text = "Password are not matched";
+            self.popupAlert(title: "Title", message: " Oops, xxxx ", actionTitles: ["Option1","Option2","Option3"], actions:[{action1 in
+
+            },{action2 in
+
+            }, nil]);return;}
         
         Model.instance.createUser(email: emailTextField.text!, password: passwordTextField.text!, userName: nameTextField.text!,profileImageUrl: "", onSuccess: {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -97,6 +102,17 @@ class SignUpViewController: UIViewController {
         videoPlayer?.isMuted = true
         videoPlayer?.playImmediately(atRate: 0.3)
     }
-    
-    
+ 
+}
+
+
+extension UIViewController {
+    func popupAlert(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for (index, title) in actionTitles.enumerated() {
+            let action = UIAlertAction(title: title, style: .default, handler: actions[index])
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
 }
