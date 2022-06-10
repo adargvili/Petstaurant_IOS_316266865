@@ -10,9 +10,9 @@ import UIKit
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var postDescriptionInput: UITextView!
     @IBOutlet weak var galleryBtn: UIButton!
     @IBOutlet weak var cameraBtn: UIButton!
-    @IBOutlet weak var postDescriptionInput: UITextField!
     @IBOutlet weak var postTitleInput: UITextField!
     @IBOutlet weak var avatarImgv: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -37,11 +37,12 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     override func viewDidLoad() {
         super.viewDidLoad()
         self.postTitleInput.delegate=self
-        self.postDescriptionInput.delegate=self
         Model.instance.btnBorderColor(button: galleryBtn){}
         Model.instance.btnBorderColor(button: cameraBtn){}
         Model.instance.btnBorderColor(button: cancelBtn){}
         Model.instance.btnBorderColor(button: saveBtn){}
+        Model.instance.txtViewBorderColor(textView: postDescriptionInput){}
+        Model.instance.txtFieldBorderColor(textField: postTitleInput){}
     }
     
     func textFieldShouldReturn(textField: UITextField)->Bool{

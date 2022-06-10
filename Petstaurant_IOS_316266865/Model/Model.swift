@@ -161,6 +161,23 @@ class Model{
         completion()
     }
     
+    func txtViewBorderColor(textView: UITextView,completion: @escaping ()->Void){
+        
+        textView.layer.cornerRadius = 10
+        textView.layer.borderWidth = 2
+        textView.layer.borderColor = UIColor.systemYellow.cgColor
+        completion()
+    }
+    
+    
+    func txtFieldBorderColor(textField: UITextField,completion: @escaping ()->Void){
+        
+        textField.layer.cornerRadius = 10
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor.systemYellow.cgColor
+        completion()
+    }
+    
     
     
     
