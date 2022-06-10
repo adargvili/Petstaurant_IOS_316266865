@@ -15,6 +15,9 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var postDescriptionInput: UITextField!
     @IBOutlet weak var postTitleInput: UITextField!
     @IBOutlet weak var avatarImgv: UIImageView!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    
     @IBAction func saveBtn(_ sender: UIButton) {
         let post = Post(uid: String(UserDefaults.standard.string(forKey: "uid")!) , postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
         Model.instance.savePostOnDB(post: post){}
@@ -35,7 +38,10 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
         super.viewDidLoad()
         self.postTitleInput.delegate=self
         self.postDescriptionInput.delegate=self
-        
+        Model.instance.btnBorderColor(button: galleryBtn){}
+        Model.instance.btnBorderColor(button: cameraBtn){}
+        Model.instance.btnBorderColor(button: cancelBtn){}
+        Model.instance.btnBorderColor(button: saveBtn){}
     }
     
     func textFieldShouldReturn(textField: UITextField)->Bool{

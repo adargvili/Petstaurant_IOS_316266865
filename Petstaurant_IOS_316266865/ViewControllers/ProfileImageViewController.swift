@@ -17,6 +17,11 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        Model.instance.btnBorderColor(button: profileCameraImage){}
+        Model.instance.btnBorderColor(button: profileGalleryImage){}
+        Model.instance.btnBorderColor(button: continueBtn){}
+        
+
         Model.instance.getUser(uid:String(UserDefaults.standard.string(forKey: "uid")!)){
             user in
             let u = user

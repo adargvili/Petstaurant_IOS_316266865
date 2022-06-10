@@ -30,6 +30,12 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         super.viewDidLoad()
         avatar.layer.cornerRadius=40
         avatar.clipsToBounds=true
+        Model.instance.btnBorderColor(button: galleryDetailBtn){}
+        Model.instance.btnBorderColor(button: cameraDetailBtn){}
+        Model.instance.btnBorderColor(button: SaveDetailBtn){}
+        Model.instance.btnBorderColor(button: cancelDetailBtn){}
+        Model.instance.btnBorderColor(button: deleteDetailBtn){}
+        
         postDescriptionLabel.text = post?.postDescription
         postTitleLabel.text = post?.postTitle
         if let urlStr = post?.postImage {

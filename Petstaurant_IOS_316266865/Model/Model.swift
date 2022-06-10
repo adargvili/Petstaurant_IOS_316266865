@@ -153,4 +153,15 @@ class Model{
     }
     
     
+    func btnBorderColor(button: UIButton,completion: @escaping ()->Void){
+        
+        button.layer.cornerRadius = 10
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemYellow.cgColor
+        completion()
+    }
+    
+    
+    
+    
 }
