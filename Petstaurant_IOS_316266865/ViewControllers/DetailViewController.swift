@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         }
     }
     
+    @IBOutlet weak var detailActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var navBtn: UINavigationItem!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var postDescriptionLabel: UITextField!
@@ -39,8 +40,17 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         postDescriptionLabel.text = post?.postDescription
         postTitleLabel.text = post?.postTitle
         if let urlStr = post?.postImage {
+            self.detailActivityIndicator.isHidden=false
+            self.detailActivityIndicator.startAnimating()
             let url = URL(string: urlStr)
-            avatar?.kf.setImage(with: url, options:[.forceRefresh])
+            avatar?.kf.setImage(with: url, options:[.forceRefresh]){ result in
+                switch result {
+                case .success(let value):
+                    self.detailActivityIndicator.isHidden=true
+                case .failure(let error):
+                    self.detailActivityIndicator.isHidden=true
+                }
+            }
         }else{
             avatar.image = UIImage(named: "userAvatar")
         }
