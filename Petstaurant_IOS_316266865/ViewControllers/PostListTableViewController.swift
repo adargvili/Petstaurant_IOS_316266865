@@ -44,7 +44,7 @@ class PostListTableViewController: UITableViewController {
             user in
             let u = user
             postCell?.postUserName = u.userName ?? ""
-            if postCell?.postUserName != "", let urlStr = u.profileImageUrl {
+            if u.profileImageUrl != "", let urlStr = u.profileImageUrl {
                 postCell?.cellActivityIndicator.isHidden=false
                 postCell?.cellActivityIndicator.startAnimating()
                 let url = URL(string: urlStr)
