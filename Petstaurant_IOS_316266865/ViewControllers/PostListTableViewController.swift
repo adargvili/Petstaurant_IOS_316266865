@@ -45,8 +45,19 @@ class PostListTableViewController: UITableViewController {
             let u = user
             postCell?.postUserName = u.userName ?? ""
             if let urlStr = u.profileImageUrl {
+                postCell?.cellActivityIndicator.isHidden=false
+                postCell?.cellActivityIndicator.startAnimating()
                 let url = URL(string: urlStr)
-                postCell?.avatarImage?.kf.setImage(with: url)
+                postCell?.avatarImage?.kf.setImage(with: url, options:[.forceRefresh]){ result in
+                    switch result {
+                    case .success(_):
+                        print()
+                        postCell?.cellActivityIndicator.isHidden=true
+                    case .failure(_):
+                        print()
+                        postCell?.cellActivityIndicator.isHidden=true
+                    }
+                }
             }else{
                 postCell?.avatarImage.image = UIImage(named: "userAvatar")
             }

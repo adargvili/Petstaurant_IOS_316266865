@@ -11,6 +11,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postUserNameLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var cellActivityIndicator: UIActivityIndicatorView!
     
     var postTitle = ""{
         didSet{
@@ -23,11 +24,7 @@ class PostTableViewCell: UITableViewCell {
             if postUserNameLabel != nil{postUserNameLabel.text = postUserName}
         }
     }
-    
-    
-    
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         postUserNameLabel.text = postUserName

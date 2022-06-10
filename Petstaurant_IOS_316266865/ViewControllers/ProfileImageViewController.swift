@@ -8,20 +8,20 @@
 import UIKit
 
 class ProfileImageViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var profileImageAvatar: UIImageView!
     @IBOutlet weak var profileGalleryImage: UIButton!
     @IBOutlet weak var profileCameraImage: UIButton!
     @IBOutlet weak var continueBtn: UIButton!
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         Model.instance.btnBorderColor(button: profileCameraImage){}
         Model.instance.btnBorderColor(button: profileGalleryImage){}
         Model.instance.btnBorderColor(button: continueBtn){}
         
-
+        
         Model.instance.getUser(uid:String(UserDefaults.standard.string(forKey: "uid")!)){
             user in
             let u = user
@@ -32,7 +32,7 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
             }
         }
     }
-
+    
     @IBAction func continueBtnTapped(_ sender: Any) {
         
         if let image = selectedImage{
@@ -49,7 +49,7 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
         return
     }
     
-
+    
     
     func takePicture(source: UIImagePickerController.SourceType){
         let imagePicker = UIImagePickerController()
@@ -61,15 +61,15 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-
+    
     var selectedImage: UIImage?
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
         self.profileImageAvatar.image = selectedImage
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     @IBAction func openProfileCamera(_ sender: Any) {

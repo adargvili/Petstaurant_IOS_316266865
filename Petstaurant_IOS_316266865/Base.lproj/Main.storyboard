@@ -26,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4hl-zV-3wm">
+                                            <rect key="frame" x="177" y="37.5" width="20" height="20"/>
+                                        </activityIndicatorView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="abW-Xg-9ca">
                                             <rect key="frame" x="5" y="5" width="85" height="86"/>
                                             <constraints>
@@ -58,16 +61,20 @@
                                         <constraint firstItem="Nml-nn-pxH" firstAttribute="leading" secondItem="abW-Xg-9ca" secondAttribute="trailing" constant="16" id="BSv-eu-3en"/>
                                         <constraint firstItem="abW-Xg-9ca" firstAttribute="leading" secondItem="NHz-yb-1ra" secondAttribute="leading" constant="5" id="BWe-uA-Ls1"/>
                                         <constraint firstItem="Nml-nn-pxH" firstAttribute="top" secondItem="4y3-G4-d0K" secondAttribute="bottom" constant="8" id="S8m-3b-H10"/>
+                                        <constraint firstItem="4hl-zV-3wm" firstAttribute="top" secondItem="abW-Xg-9ca" secondAttribute="top" id="VXe-x2-fZL"/>
                                         <constraint firstItem="abW-Xg-9ca" firstAttribute="top" secondItem="NHz-yb-1ra" secondAttribute="top" constant="5" id="Vxt-l7-xN3"/>
                                         <constraint firstItem="VCg-kO-Tak" firstAttribute="top" secondItem="4y3-G4-d0K" secondAttribute="bottom" constant="8" symbolic="YES" id="Xmz-GN-woj"/>
+                                        <constraint firstItem="4hl-zV-3wm" firstAttribute="centerX" secondItem="abW-Xg-9ca" secondAttribute="centerX" id="ZxK-B9-SVN"/>
                                         <constraint firstItem="4y3-G4-d0K" firstAttribute="leading" secondItem="abW-Xg-9ca" secondAttribute="trailing" constant="16" id="c3X-dr-iMp"/>
                                         <constraint firstItem="VCg-kO-Tak" firstAttribute="leading" secondItem="Nml-nn-pxH" secondAttribute="trailing" constant="5" id="n63-2h-Gma"/>
                                         <constraint firstAttribute="trailing" secondItem="4y3-G4-d0K" secondAttribute="trailing" constant="8" id="pFB-0s-BjP"/>
+                                        <constraint firstItem="4hl-zV-3wm" firstAttribute="centerY" secondItem="abW-Xg-9ca" secondAttribute="centerY" id="xXr-Ub-Dv1"/>
                                         <constraint firstItem="4y3-G4-d0K" firstAttribute="top" secondItem="NHz-yb-1ra" secondAttribute="top" constant="8" id="zaz-SK-CzO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarImage" destination="abW-Xg-9ca" id="URX-GI-fcb"/>
+                                    <outlet property="cellActivityIndicator" destination="4hl-zV-3wm" id="c61-Wc-k5j"/>
                                     <outlet property="postTitleLabel" destination="VCg-kO-Tak" id="tz0-U1-5y5"/>
                                     <outlet property="postUserNameLabel" destination="4y3-G4-d0K" id="7pM-my-bom"/>
                                 </connections>

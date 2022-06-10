@@ -45,9 +45,9 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
             let url = URL(string: urlStr)
             avatar?.kf.setImage(with: url, options:[.forceRefresh]){ result in
                 switch result {
-                case .success(let value):
+                case .success(_):
                     self.detailActivityIndicator.isHidden=true
-                case .failure(let error):
+                case .failure(_):
                     self.detailActivityIndicator.isHidden=true
                 }
             }
