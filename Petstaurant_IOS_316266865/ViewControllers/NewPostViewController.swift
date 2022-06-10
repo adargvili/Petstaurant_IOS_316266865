@@ -73,7 +73,7 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     }
     
     @IBAction func openCamera(_ sender: Any) {
-        takePicture(source: .camera)
+//        takePicture(source: .camera)
     }
     @IBAction func openGallery(_ sender: Any) {
         takePicture(source: .photoLibrary)

@@ -73,7 +73,7 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func openProfileCamera(_ sender: Any) {
-        takePicture(source: .camera)
+//        takePicture(source: .camera)
     }
     
     @IBAction func openProfileGallery(_ sender: Any) {

@@ -41,7 +41,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         
         postDescriptionLabel.text = post?.postDescription
         postTitleLabel.text = post?.postTitle
-        if let urlStr = post?.postImage {
+        if post?.postImage != "", let urlStr = post?.postImage {
             self.detailActivityIndicator.isHidden=false
             self.detailActivityIndicator.startAnimating()
             let url = URL(string: urlStr)
@@ -142,7 +142,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     
     @IBAction func cameraDetailBtnTapped(_ sender: Any) {
-        takePicture(source: .camera)
+//        takePicture(source: .camera)
     }
     
     @IBAction func deleteDetailBtnTapped(_ sender: Any) {
