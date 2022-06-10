@@ -27,6 +27,9 @@ class ModelFirebase{
             }
             else{
                 let user = User(id: result!.user.uid, email: email, userName: userName, profileImageUrl: profileImageUrl)
+                UserDefaults.standard.set(user.id, forKey: "uid")
+                UserDefaults.standard.set(user.email, forKey: "email")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 self.saveUserOnDB(user: user){}
                 onSuccess()
             }
