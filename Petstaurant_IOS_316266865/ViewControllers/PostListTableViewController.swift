@@ -59,7 +59,7 @@ class PostListTableViewController: UITableViewController {
                     }
                 }
             }else{
-                postCell?.avatarImage.image = UIImage(named: "userAvatar")
+                postCell?.avatarImage.image = UIImage(named: "dog")
             }
         }
 //        postCell?.layer.borderWidth = 1

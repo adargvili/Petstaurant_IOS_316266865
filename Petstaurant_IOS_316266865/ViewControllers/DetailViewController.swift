@@ -54,7 +54,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
                 }
             }
         }else{
-            avatar.image = UIImage(named: "userAvatar")
+            avatar.image = UIImage(named: "dish")
         }
         
         if post?.uid == String(UserDefaults.standard.string(forKey: "uid")!){
