@@ -494,17 +494,18 @@
         <scene sceneID="mpb-yd-Ssb">
             <objects>
                 <viewController storyboardIdentifier="AboutVC" title="About" id="4Rv-iU-hv8" customClass="AboutViewController" customModule="Petstaurant_IOS_316266865" customModuleProvider="target" sceneMemberID="viewController">
-                    <label key="view" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is Petstaurant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="Mvj-fT-cks">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" id="2jr-7S-QSF">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="694"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                     <navigationItem key="navigationItem" title="About" id="0f7-I8-hx0"/>
                     <size key="freeformSize" width="374" height="694"/>
                     <connections>
-                        <outlet property="aboutLabel" destination="Mvj-fT-cks" id="n6K-do-hpE"/>
+                        <outlet property="aboutLabel" destination="2jr-7S-QSF" id="t6m-CX-DTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5p-yo-ZCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

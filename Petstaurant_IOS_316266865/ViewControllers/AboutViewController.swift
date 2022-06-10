@@ -9,11 +9,14 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
-    @IBOutlet var aboutLabel: UILabel!
+
+    @IBOutlet var aboutLabel: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        aboutLabel.text = "Hello Dear: " + String(UserDefaults.standard.string(forKey: "email")!) + " !"
+        Model.instance.txtViewBorderColor(textView: aboutLabel){}
+        aboutLabel.isEditable = false
+        aboutLabel.text = "Hello Dear: " + String(UserDefaults.standard.string(forKey: "email")!) + " !\n\n\nWelcome to Petstaurant !\n\nIf You Like Pets, You'll Love Us!"
     }
 
 
