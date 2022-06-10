@@ -315,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-br-9s8">
-                                <rect key="frame" x="10" y="128" width="354" height="406"/>
+                                <rect key="frame" x="10" y="128" width="354" height="0.0"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kk2-ZS-LKY">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
@@ -324,10 +324,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3x-Nz-TWQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="182.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-8Y-j87">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="182.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
@@ -340,7 +340,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vag-Me-59G">
-                                                <rect key="frame" x="177" y="0.0" width="177" height="182.5"/>
+                                                <rect key="frame" x="177" y="0.0" width="177" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="labelColor"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
@@ -359,16 +359,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-tI-KYA">
-                                        <rect key="frame" x="0.0" y="182.5" width="354" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVi-fu-sRA">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="0.0"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVy-pj-hik">
-                                                <rect key="frame" x="92" y="0.0" width="262" height="41"/>
+                                                <rect key="frame" x="92" y="0.0" width="262" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="8"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -380,30 +380,27 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-gL-dwR">
-                                        <rect key="frame" x="0.0" y="223.5" width="354" height="101.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6Q-Q2-ShH">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-z2-pvf">
-                                                <rect key="frame" x="92" y="0.0" width="262" height="101.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VvS-vK-Y7N">
+                                                <rect key="frame" x="92" y="0.0" width="262" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="10"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                        <color key="value" systemColor="systemGrayColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHp-Vb-qnB">
-                                        <rect key="frame" x="0.0" y="325" width="354" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgD-8V-cy4">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="40.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel">
@@ -415,7 +412,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-BM-7hU">
-                                                <rect key="frame" x="177" y="0.0" width="177" height="40.5"/>
+                                                <rect key="frame" x="177" y="0.0" width="177" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
@@ -434,7 +431,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMF-K3-kaM">
-                                        <rect key="frame" x="0.0" y="365.5" width="354" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Delete Post">
@@ -457,7 +454,6 @@
                                     <constraint firstItem="zHp-Vb-qnB" firstAttribute="width" secondItem="UUG-br-9s8" secondAttribute="width" id="OIF-FS-qgx"/>
                                     <constraint firstItem="kk2-ZS-LKY" firstAttribute="top" secondItem="SDl-Se-Z7y" secondAttribute="top" id="PRQ-V5-lVo"/>
                                     <constraint firstItem="qmP-gL-dwR" firstAttribute="width" secondItem="UUG-br-9s8" secondAttribute="width" id="Qrf-n8-dxo"/>
-                                    <constraint firstItem="ySS-z2-pvf" firstAttribute="width" secondItem="qVy-pj-hik" secondAttribute="width" id="WbZ-gL-Cmc"/>
                                     <constraint firstItem="S3x-Nz-TWQ" firstAttribute="width" secondItem="UUG-br-9s8" secondAttribute="width" id="aMk-72-er6"/>
                                     <constraint firstItem="S3x-Nz-TWQ" firstAttribute="height" secondItem="UUG-br-9s8" secondAttribute="height" multiplier="0.1" id="duG-b2-JDo"/>
                                     <constraint firstItem="SDl-Se-Z7y" firstAttribute="height" secondItem="UUG-br-9s8" secondAttribute="height" multiplier="0.35" id="f1e-p9-vwx"/>
@@ -486,7 +482,7 @@
                         <outlet property="detailActivityIndicator" destination="kk2-ZS-LKY" id="WPN-ob-SOV"/>
                         <outlet property="galleryDetailBtn" destination="1Yk-8Y-j87" id="FCm-h7-KeQ"/>
                         <outlet property="navBtn" destination="fwn-dT-QLZ" id="Oeg-BO-FnI"/>
-                        <outlet property="postDescriptionLabel" destination="ySS-z2-pvf" id="FCl-6S-RDd"/>
+                        <outlet property="postDescriptionLabel" destination="VvS-vK-Y7N" id="Tdq-Rj-Xcu"/>
                         <outlet property="postTitleLabel" destination="qVy-pj-hik" id="4Dt-cY-Aoo"/>
                     </connections>
                 </viewController>

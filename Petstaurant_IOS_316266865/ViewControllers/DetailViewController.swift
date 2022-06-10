@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var detailActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var navBtn: UINavigationItem!
     @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var postDescriptionLabel: UITextField!
+    @IBOutlet weak var postDescriptionLabel: UITextView!
     @IBOutlet weak var postTitleLabel: UITextField!
     @IBOutlet weak var cancelDetailBtn: UIButton!
     @IBOutlet weak var SaveDetailBtn: UIButton!
@@ -36,6 +36,8 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         Model.instance.btnBorderColor(button: SaveDetailBtn){}
         Model.instance.btnBorderColor(button: cancelDetailBtn){}
         Model.instance.btnBorderColor(button: deleteDetailBtn){}
+        Model.instance.txtViewBorderColor(textView: postDescriptionLabel){}
+        Model.instance.txtFieldBorderColor(textField: postTitleLabel){}
         
         postDescriptionLabel.text = post?.postDescription
         postTitleLabel.text = post?.postTitle
@@ -56,7 +58,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
         }
         
         if post?.uid == String(UserDefaults.standard.string(forKey: "uid")!){
-            postDescriptionLabel.isEnabled = true
+            postDescriptionLabel.isEditable = true
             postTitleLabel.isEnabled = true
             cancelDetailBtn.isHidden = false
             SaveDetailBtn.isHidden = false
@@ -66,7 +68,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
             
         }
         else {
-            postDescriptionLabel.isEnabled = false
+            postDescriptionLabel.isEditable = false
             postTitleLabel.isEnabled = false
             cancelDetailBtn.isHidden = true
             SaveDetailBtn.isHidden = true
