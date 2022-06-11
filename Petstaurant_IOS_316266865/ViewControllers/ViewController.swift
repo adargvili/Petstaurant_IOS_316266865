@@ -52,7 +52,11 @@ class ViewController: UIViewController , MySegueProtocol {
             target: self,
             action: #selector(settings)
         )
-        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.black
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     @objc fileprivate func logoutAction(){
@@ -64,8 +68,9 @@ class ViewController: UIViewController , MySegueProtocol {
     
     @objc fileprivate func settings(){
     }
-
+    
 }
+
 
 
 extension UIViewController {
