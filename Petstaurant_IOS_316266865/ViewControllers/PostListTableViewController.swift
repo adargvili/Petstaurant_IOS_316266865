@@ -54,8 +54,9 @@ class PostListTableViewController: UITableViewController {
                         print()
                         postCell?.cellActivityIndicator.isHidden=true
                     case .failure(_):
-                        print()
-                        postCell?.cellActivityIndicator.isHidden=true
+                        self.popupAlert(title: "Post List Table Error",
+                                        message: "Failed to upload post image",
+                                        actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return
                     }
                 }
             }else{

@@ -50,7 +50,9 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
                 case .success(_):
                     self.detailActivityIndicator.isHidden=true
                 case .failure(_):
-                    self.detailActivityIndicator.isHidden=true
+                    self.popupAlert(title: "Edit Post Error",
+                                    message: "Failed to upload post image",
+                                    actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;
                 }
             }
         }else{
@@ -84,6 +86,11 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     
     @IBAction func saveDetailTapped(_ sender: Any) {
+        
+        if(postTitleLabel.text! == "" || postDescriptionLabel.text! == "" ){
+            self.popupAlert(title: "Edit Post Error",
+                            message: "At least one of the fields is empty",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
         
         Model.instance.updatePostOnDB(id: post?.id ?? "",
                                       key: "postDescription",
@@ -153,4 +160,5 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
     }
     
 }
+
 

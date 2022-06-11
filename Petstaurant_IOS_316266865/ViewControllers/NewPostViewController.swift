@@ -19,6 +19,12 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var saveBtn: UIButton!
     
     @IBAction func saveBtn(_ sender: UIButton) {
+        
+        if(postTitleInput.text! == "" || postDescriptionInput.text! == ""){
+            self.popupAlert(title: "New Post Error",
+                            message: "At least one of the fields is empty",
+                            actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
+        
         let post = Post(uid: String(UserDefaults.standard.string(forKey: "uid")!) , postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
         Model.instance.savePostOnDB(post: post){}
         if let image = selectedImage{
