@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NewPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
-
+class NewPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate,  UITextViewDelegate{
+    
     @IBOutlet weak var postDescriptionInput: UITextView!
     @IBOutlet weak var galleryBtn: UIButton!
     @IBOutlet weak var cameraBtn: UIButton!
@@ -20,7 +20,7 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     
     @IBAction func saveBtn(_ sender: UIButton) {
         
-        if(postTitleInput.text! == "" || postDescriptionInput.text! == ""){
+        if(postTitleInput.text! == "" || postDescriptionInput.text! == "Description" || postDescriptionInput.text! == ""){
             self.popupAlert(title: "New Post Error",
                             message: "At least one of the fields is empty",
                             actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return;}
@@ -42,7 +42,10 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.postDescriptionInput.delegate=self
         self.postTitleInput.delegate=self
+        self.postDescriptionInput.text = "Description"
+        self.postDescriptionInput.textColor = UIColor.lightGray
         Model.instance.btnBorderColor(button: galleryBtn){}
         Model.instance.btnBorderColor(button: cameraBtn){}
         Model.instance.btnBorderColor(button: cancelBtn){}
@@ -56,6 +59,19 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
         return true
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
     
     func takePicture(source: UIImagePickerController.SourceType){
         let imagePicker = UIImagePickerController()
@@ -67,19 +83,19 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-
+    
     var selectedImage: UIImage?
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
         self.avatarImgv.image = selectedImage
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     @IBAction func openCamera(_ sender: Any) {
-//        takePicture(source: .camera)
+        //        takePicture(source: .camera)
     }
     @IBAction func openGallery(_ sender: Any) {
         takePicture(source: .photoLibrary)
@@ -88,5 +104,5 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
 }
