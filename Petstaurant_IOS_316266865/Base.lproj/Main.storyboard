@@ -467,8 +467,12 @@
                         <constraints>
                             <constraint firstItem="UUG-br-9s8" firstAttribute="top" secondItem="2cu-It-F4l" secondAttribute="top" constant="40" id="0pM-Iv-DxY"/>
                             <constraint firstAttribute="trailing" secondItem="UUG-br-9s8" secondAttribute="trailing" constant="10" id="2VB-f0-8wV"/>
+                            <constraint firstAttribute="trailing" secondItem="UUG-br-9s8" secondAttribute="trailing" constant="10" id="a4o-hL-aXA"/>
                             <constraint firstItem="UUG-br-9s8" firstAttribute="leading" secondItem="2cu-It-F4l" secondAttribute="leading" constant="10" id="dia-bG-k9z"/>
+                            <constraint firstItem="2cu-It-F4l" firstAttribute="bottom" secondItem="UUG-br-9s8" secondAttribute="bottom" constant="80" id="eCG-Rw-ffM"/>
                             <constraint firstItem="2cu-It-F4l" firstAttribute="bottom" secondItem="UUG-br-9s8" secondAttribute="bottom" constant="160" id="fAw-Ia-lVe"/>
+                            <constraint firstItem="UUG-br-9s8" firstAttribute="top" secondItem="2cu-It-F4l" secondAttribute="top" constant="40" id="nA6-R0-1Ww"/>
+                            <constraint firstItem="UUG-br-9s8" firstAttribute="leading" secondItem="Km3-X7-FlL" secondAttribute="leading" constant="10" id="sVX-6N-ZQu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Some Details.." id="fwn-dT-QLZ"/>
