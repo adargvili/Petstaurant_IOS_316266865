@@ -20,7 +20,7 @@ class ModelFirebase{
         
     }
     
-    func createUser(email:String, password:String,userName:String,profileImageUrl:String,  onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
+    func createUser(email:String, password:String,userName:String,profileImageUrl:String,  onSuccess: @escaping (User) -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error as NSError? {
                 onError(error.localizedDescription)
@@ -31,7 +31,7 @@ class ModelFirebase{
                 UserDefaults.standard.set(user.email, forKey: "email")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 self.saveUserOnDB(user: user){}
-                onSuccess()
+                onSuccess(user)
             }
         }
     }

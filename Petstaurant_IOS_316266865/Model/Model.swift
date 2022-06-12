@@ -24,7 +24,7 @@ class ModelNotificatiponBase{
         NSLog("post notify")
         NotificationCenter.default.post(name: Notification.Name(name), object: self)
     }
-
+    
 }
 
 class Model{
@@ -34,12 +34,13 @@ class Model{
     var postList = [Post]()
     
     private init(){
-       
+        
     }
     
     
     func createUser(email: String, password: String, userName: String, profileImageUrl: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
-        firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl, onSuccess: {
+        firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl, onSuccess: {(user) in
+            UserDao.add(user: user)
             onSuccess()
         }) { (errorMsg) in
             onError(errorMsg!)
@@ -57,7 +58,7 @@ class Model{
         }
         
     }
-
+    
     
     func logoutUser(completion: @escaping ()->Void){
         firebaseModel.logoutUser(){

@@ -14,7 +14,7 @@
         <attribute name="userName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="PostDao" positionX="-45" positionY="27" width="128" height="118"/>
         <element name="UserDao" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="PostDao" positionX="-45" positionY="27" width="128" height="104"/>
     </elements>
 </model>
