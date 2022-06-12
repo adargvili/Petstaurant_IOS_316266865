@@ -39,5 +39,24 @@ public class UserDao: NSManagedObject {
             print("user add core error \(error) \(error.userInfo)")
         }
     }
+    
+    
+    
+    static func getAllUsers()->[User]{
+        guard let context = context else {
+            return []
+        }
 
+        do{
+            let usersDao = try context.fetch(UserDao.fetchRequest())
+            var usArray:[User] = []
+            for usDao in usersDao{
+                usArray.append(User(id:usDao.id!, email: usDao.email! ,userName: usDao.userName! ,profileImageUrl: usDao.profileImageUrl! ))
+            }
+            return usArray
+        }catch let error as NSError{
+            print("user fetch error \(error) \(error.userInfo)")
+            return []
+        }
+    }
 }
