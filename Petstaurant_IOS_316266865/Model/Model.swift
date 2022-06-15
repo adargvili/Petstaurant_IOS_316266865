@@ -97,6 +97,12 @@ class Model{
     }
     
     func getAllPosts(completion:@escaping ([Post])->Void){
+        
+        firebaseModel.getAllPosts(){
+            posts in
+            PostDao.createPosts(posts: posts)
+        }
+        
         return firebaseModel.getAllPosts(completion: completion)
     }
     

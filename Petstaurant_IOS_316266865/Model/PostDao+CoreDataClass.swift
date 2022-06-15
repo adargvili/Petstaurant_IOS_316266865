@@ -43,6 +43,38 @@ public class PostDao: NSManagedObject {
         }
     }
     
+    
+    static func createPosts(posts:[Post]){
+        guard let context = context else {
+            return
+        }
+        for post in posts {
+            let fetchRequest: NSFetchRequest<PostDao> = PostDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", post.id!)
+            var postsDao: [NSManagedObject] = []
+            do {
+                postsDao = try context.fetch(fetchRequest)
+               }
+               catch {
+                   print("error executing fetch request: \(error)")
+               }
+            if postsDao.count==0{
+                let p = PostDao(context: context)
+                p.id = post.id
+                p.uid = post.uid
+                p.postTitle = post.postTitle
+                p.postDescription = post.postDescription
+                p.postImage = post.postImage
+            }
+        }
+        
+        do{
+            try context.save()
+        }catch let error as NSError{
+            print("posts create core error \(error) \(error.userInfo)")
+        }
+    }
+    
     static func getPost(id:String, completion:@escaping (Post)->Void){
         guard let context = context else {
             return
@@ -70,9 +102,9 @@ public class PostDao: NSManagedObject {
         }
 
         do{
-            let usersDao = try context.fetch(PostDao.fetchRequest())
+            let postsDao = try context.fetch(PostDao.fetchRequest())
             var pArray:[Post] = []
-            for pDao in usersDao{
+            for pDao in postsDao{
                 pArray.append(Post(uid: pDao.uid!, postDescription: pDao.postDescription!,
                                    postTitle: pDao.postTitle!, postImage: pDao.postImage!))
             }
