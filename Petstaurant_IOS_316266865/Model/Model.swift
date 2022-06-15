@@ -40,7 +40,7 @@ class Model{
     
     func createUser(email: String, password: String, userName: String, profileImageUrl: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
         firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl, onSuccess: {(user) in
-            UserDao.add(user: user)
+            UserDao.createUser(user: user)
             onSuccess()
         }) { (errorMsg) in
             onError(errorMsg!)
@@ -81,6 +81,10 @@ class Model{
     
     func getUser(uid:String, completion:@escaping (User)->Void){
         return firebaseModel.getUser(uid:uid, completion: completion)
+    }
+    
+    func getCoreUser(uid:String, completion:@escaping (User)->Void){
+        return UserDao.getUser(uid: uid, completion: completion)
     }
     
     func savePostOnDB(post:Post, completion: @escaping ()->Void){

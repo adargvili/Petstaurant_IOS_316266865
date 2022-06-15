@@ -22,7 +22,7 @@ public class UserDao: NSManagedObject {
     
     
     
-    static func add(user:User){
+    static func createUser(user:User){
         guard let context = context else {
             return
         }
@@ -40,7 +40,25 @@ public class UserDao: NSManagedObject {
         }
     }
     
-    
+    static func getUser(uid:String, completion:@escaping (User)->Void){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<UserDao> = UserDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", uid)
+            let usersDao = try context.fetch(fetchRequest)
+            var usArray:[User] = []
+            for usDao in usersDao{
+                usArray.append(User(id:usDao.id!, email: usDao.email! ,userName: usDao.userName! ,profileImageUrl: usDao.profileImageUrl! ))
+            }
+            completion(usArray.first!)
+        }catch let error as NSError{
+            print("user fetch error \(error) \(error.userInfo)")
+            let user = User()
+            completion(user)
+        }
+    }
     
     static func getAllUsers()->[User]{
         guard let context = context else {
