@@ -77,4 +77,26 @@ public class UserDao: NSManagedObject {
             return []
         }
     }
+    
+    
+    static func updateUser(uid:String, key:String, value:String){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<UserDao> = UserDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", uid)
+            let usersDao = try context.fetch(fetchRequest)
+            if(usersDao.count>0){
+                var user = usersDao.first!
+                user.setValue(value, forKey: key)
+                try context.save()
+            }
+            
+            return
+        }catch let error as NSError{
+            print("user update error \(error) \(error.userInfo)")
+            return
+        }
+    }
 }
