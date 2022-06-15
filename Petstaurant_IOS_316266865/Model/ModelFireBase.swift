@@ -118,7 +118,7 @@ class ModelFirebase{
     
     func getUser(uid:String, completion:@escaping (User)->Void){
         db.collection("users").whereField("id", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
-            var user = User()
+            let user = User()
             if let err = err {
                 print("Error getting documents: \(err)")
                 completion(user)

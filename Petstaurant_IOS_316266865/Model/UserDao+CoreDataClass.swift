@@ -36,7 +36,7 @@ public class UserDao: NSManagedObject {
         do{
             try context.save()
         }catch let error as NSError{
-            print("user add core error \(error) \(error.userInfo)")
+            print("user create core error \(error) \(error.userInfo)")
         }
     }
     
@@ -54,7 +54,7 @@ public class UserDao: NSManagedObject {
             }
             completion(usArray.first!)
         }catch let error as NSError{
-            print("user fetch error \(error) \(error.userInfo)")
+            print("user fetch core error \(error) \(error.userInfo)")
             let user = User()
             completion(user)
         }
@@ -73,7 +73,7 @@ public class UserDao: NSManagedObject {
             }
             return usArray
         }catch let error as NSError{
-            print("user fetch error \(error) \(error.userInfo)")
+            print("user fetch core error \(error) \(error.userInfo)")
             return []
         }
     }
@@ -88,14 +88,14 @@ public class UserDao: NSManagedObject {
             fetchRequest.predicate = NSPredicate(format: "id == %@", uid)
             let usersDao = try context.fetch(fetchRequest)
             if(usersDao.count>0){
-                var user = usersDao.first!
+                let user = usersDao.first!
                 user.setValue(value, forKey: key)
                 try context.save()
             }
             
             return
         }catch let error as NSError{
-            print("user update error \(error) \(error.userInfo)")
+            print("user update core error \(error) \(error.userInfo)")
             return
         }
     }

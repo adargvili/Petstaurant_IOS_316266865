@@ -74,8 +74,8 @@ class Model{
     
     
     func updateUserOnDB(uid:String, key:String, value:String, completion: @escaping ()->Void){
+        UserDao.updateUser(uid: uid, key: key, value: value)
         firebaseModel.updateUserOnDB(uid: uid, key: key, value: value){
-            UserDao.updateUser(uid: uid, key: key, value: value)
             completion()
         }
     }
@@ -89,6 +89,7 @@ class Model{
     }
     
     func savePostOnDB(post:Post, completion: @escaping ()->Void){
+        PostDao.createPost(post: post)
         firebaseModel.savePostOnDB(post: post){
             completion()
             Model.postDataNotification.post()
@@ -103,13 +104,19 @@ class Model{
         return firebaseModel.getPost(byId: byId)
     }
     
+    func getCorePost(id:String, completion:@escaping (Post)->Void){
+        return PostDao.getPost(id: id, completion: completion)
+    }
+    
     func updatePostOnDB(id:String, key:String, value:String, completion: @escaping ()->Void){
+        PostDao.updatePost(id: id, key: key, value: value)
         firebaseModel.updatePostOnDB(id: id, key: key, value: value){
             completion()
         }
     }
     
     func deletePost(id:String, completion: @escaping ()->Void){
+        PostDao.deletePost(id: id)
         firebaseModel.deletePost(id: id){
             completion()
         }
