@@ -40,6 +40,37 @@ public class UserDao: NSManagedObject {
         }
     }
     
+    
+    static func createUsers(users:[User]){
+        guard let context = context else {
+            return
+        }
+        for user in users {
+            let fetchRequest: NSFetchRequest<UserDao> = UserDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", user.id!)
+            var usersDao: [NSManagedObject] = []
+            do {
+                usersDao = try context.fetch(fetchRequest)
+               }
+               catch {
+                   print("error executing fetch request: \(error)")
+               }
+            if usersDao.count==0{
+                let us = UserDao(context: context)
+                us.id = user.id
+                us.userName = user.userName
+                us.email = user.email
+                us.profileImageUrl = user.profileImageUrl
+            }
+        }
+        
+        do{
+            try context.save()
+        }catch let error as NSError{
+            print("users create core error \(error) \(error.userInfo)")
+        }
+    }
+    
     static func getUser(uid:String, completion:@escaping (User)->Void){
         guard let context = context else {
             return

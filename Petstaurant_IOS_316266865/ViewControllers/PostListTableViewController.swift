@@ -11,6 +11,7 @@ import Kingfisher
 class PostListTableViewController: UITableViewController {
     
     var posts = [Post]()
+
     
     func reload(){
         Model.instance.getAllPosts(){
@@ -18,6 +19,7 @@ class PostListTableViewController: UITableViewController {
             self.posts = posts
             self.tableView.reloadData()
         }
+        
     }
     
     var row = 0
@@ -40,7 +42,7 @@ class PostListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
         postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
-        Model.instance.getUser(uid:posts[indexPath.row].uid!){
+        Model.instance.getCoreUser(uid:posts[indexPath.row].uid!){
             user in
             let u = user
             postCell?.postUserName = u.userName ?? ""

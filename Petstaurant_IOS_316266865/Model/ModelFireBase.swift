@@ -100,22 +100,6 @@ class ModelFirebase{
     }
     
     
-    func getAllPosts(completion:@escaping ([Post])->Void){
-        db.collection("posts").getDocuments() { (querySnapshot, err) in
-            var posts = [Post]()
-            if let err = err {
-                print("Error getting documents: \(err)")
-                completion(posts)
-            } else {
-                for document in querySnapshot!.documents {
-                    let post = Post.FromJson(json: document.data())
-                    posts.append(post)
-                    completion(posts)
-                }
-            }
-        }
-    }
-    
     func getUser(uid:String, completion:@escaping (User)->Void){
         db.collection("users").whereField("id", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
             let user = User()
@@ -131,6 +115,39 @@ class ModelFirebase{
     }
     
     
+    
+    func getAllUsers(completion:@escaping ([User])->Void){
+        db.collection("users").getDocuments() { (querySnapshot, err) in
+            var users = [User]()
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion(users)
+            } else {
+                for document in querySnapshot!.documents {
+                    let user = User.FromJson(json: document.data())
+                    users.append(user)
+                    completion(users)
+                }
+            }
+        }
+    }
+    
+    
+    func getAllPosts(completion:@escaping ([Post])->Void){
+        db.collection("posts").getDocuments() { (querySnapshot, err) in
+            var posts = [Post]()
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion(posts)
+            } else {
+                for document in querySnapshot!.documents {
+                    let post = Post.FromJson(json: document.data())
+                    posts.append(post)
+                    completion(posts)
+                }
+            }
+        }
+    }
     
     func savePostOnDB(post:Post, completion:@escaping ()->Void){
         db.collection("posts").document(post.id!).setData(

@@ -16,9 +16,13 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
-    
+    var users = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        Model.instance.getAllUsers(){
+            users in
+            self.users = users
+        }
         let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(userLoginStatus)
         {

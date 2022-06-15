@@ -80,6 +80,16 @@ class Model{
         }
     }
     
+    func getAllUsers(completion:@escaping ([User])->Void){
+        
+        firebaseModel.getAllUsers(){
+            users in
+            UserDao.createUsers(users: users)
+        }
+        
+        return firebaseModel.getAllUsers(completion: completion)
+    }
+    
     func getUser(uid:String, completion:@escaping (User)->Void){
         return firebaseModel.getUser(uid:uid, completion: completion)
     }
