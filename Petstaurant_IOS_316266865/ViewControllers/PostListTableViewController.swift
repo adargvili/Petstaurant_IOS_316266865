@@ -25,6 +25,10 @@ class PostListTableViewController: UITableViewController {
     var row = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refresh My Feed")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         Model.postDataNotification.observe {
             self.reload()
         }
@@ -38,6 +42,10 @@ class PostListTableViewController: UITableViewController {
         return posts.count
     }
 
+    @objc func refresh(_ sender: AnyObject) {
+        self.reload()
+        self.refreshControl!.endRefreshing()
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
@@ -65,14 +73,6 @@ class PostListTableViewController: UITableViewController {
                 postCell?.avatarImage.image = UIImage(named: "dog")
             }
         }
-//        postCell?.layer.borderWidth = 1
-//        postCell?.layer.borderColor = UIColor.systemYellow.cgColor
-//        if posts[indexPath.row].uid == String(UserDefaults.standard.string(forKey: "uid")!){
-//            postCell?.backgroundColor = ç
-//        }
-//        else {
-//            postCell?.backgroundColor = UIColor.black
-//        }
         return postCell!
     }
     

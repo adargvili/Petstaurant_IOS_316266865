@@ -128,6 +128,7 @@ class Model{
         PostDao.updatePost(id: id, key: key, value: value)
         firebaseModel.updatePostOnDB(id: id, key: key, value: value){
             completion()
+            Model.postDataNotification.post()
         }
     }
     
