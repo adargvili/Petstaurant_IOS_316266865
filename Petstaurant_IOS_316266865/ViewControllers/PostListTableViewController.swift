@@ -11,12 +11,18 @@ import Kingfisher
 class PostListTableViewController: UITableViewController {
     
     var posts = [Post]()
-
+    var users = [User]()
     
     func reload(){
         Model.instance.getAllPosts(){
             posts in
             self.posts = posts
+            self.tableView.reloadData()
+        }
+        
+        Model.instance.getAllUsers(){
+            users in
+            self.users = users
             self.tableView.reloadData()
         }
         
@@ -30,6 +36,9 @@ class PostListTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.refreshControl = refreshControl
         Model.postDataNotification.observe {
+            self.reload()
+        }
+        Model.userDataNotification.observe {
             self.reload()
         }
         reload()

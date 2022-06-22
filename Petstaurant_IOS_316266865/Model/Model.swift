@@ -31,8 +31,7 @@ class Model{
     let firebaseModel = ModelFirebase()
     static let instance = Model()
     static let postDataNotification = ModelNotificatiponBase("com.adar.postDataNotification")
-    var postList = [Post]()
-    
+    static let userDataNotification = ModelNotificatiponBase("com.adar.userDataNotification")
     private init(){
         
     }
@@ -42,6 +41,7 @@ class Model{
         firebaseModel.createUser(email: email, password: password, userName: userName, profileImageUrl: profileImageUrl, onSuccess: {(user) in
             UserDao.createUser(user: user)
             onSuccess()
+            Model.userDataNotification.post()
         }) { (errorMsg) in
             onError(errorMsg!)
             return
@@ -66,17 +66,12 @@ class Model{
         }
     }
     
-    func saveUserOnDB(user:User, completion: @escaping ()->Void){
-        firebaseModel.saveUserOnDB(user: user){
-            completion()
-        }
-    }
-    
     
     func updateUserOnDB(uid:String, key:String, value:String, completion: @escaping ()->Void){
         UserDao.updateUser(uid: uid, key: key, value: value)
         firebaseModel.updateUserOnDB(uid: uid, key: key, value: value){
             completion()
+            Model.userDataNotification.post()
         }
     }
     
