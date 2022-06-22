@@ -56,7 +56,9 @@ class LoginViewController: UIViewController {
         Model.instance.loginUser(email: emailLoginTextField.text!, password: passwordLoginTextField.text!, onSuccess: {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let resultViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileImageVC") as! ProfileImageViewController
-            self.navigationController?.pushViewController(resultViewController, animated: true)
+            if String(UserDefaults.standard.string(forKey: "uid")!) != "" {
+                self.navigationController?.pushViewController(resultViewController, animated: true)
+            }
             return
         }) { (errorMsg) in
             self.popupAlert(title: "Login Error",
