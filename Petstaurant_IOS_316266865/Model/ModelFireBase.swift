@@ -126,8 +126,8 @@ class ModelFirebase{
                 for document in querySnapshot!.documents {
                     let user = User.FromJson(json: document.data())
                     users.append(user)
-                    completion(users)
                 }
+                completion(users)
             }
         }
     }
@@ -143,8 +143,8 @@ class ModelFirebase{
                 for document in querySnapshot!.documents {
                     let post = Post.FromJson(json: document.data())
                     posts.append(post)
-                    completion(posts)
                 }
+                completion(posts)
             }
         }
     }
