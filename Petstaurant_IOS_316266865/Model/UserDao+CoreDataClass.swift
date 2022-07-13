@@ -83,7 +83,13 @@ public class UserDao: NSManagedObject {
             for usDao in usersDao{
                 usArray.append(User(id:usDao.id!, email: usDao.email! ,userName: usDao.userName! ,profileImageUrl: usDao.profileImageUrl! ))
             }
+            if usArray.count>0{
             completion(usArray.first!)
+            }
+            else{
+                let user = User()
+                completion(user)
+            }
         }catch let error as NSError{
             print("user fetch core error \(error) \(error.userInfo)")
             let user = User()
