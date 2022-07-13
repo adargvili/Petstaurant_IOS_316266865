@@ -135,6 +135,7 @@ class Model{
         PostDao.deletePost(id: id)
         firebaseModel.deletePost(id: id){
             completion()
+            Model.postDataNotification.post()
         }
     }
     
