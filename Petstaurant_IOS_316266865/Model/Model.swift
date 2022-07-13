@@ -127,6 +127,10 @@ class Model{
         }
     }
     
+    func deleteAllCorePosts(completion: @escaping ()->Void){
+        PostDao.deleteAllPosts()
+    }
+    
     func deletePost(id:String, completion: @escaping ()->Void){
         PostDao.deletePost(id: id)
         firebaseModel.deletePost(id: id){
