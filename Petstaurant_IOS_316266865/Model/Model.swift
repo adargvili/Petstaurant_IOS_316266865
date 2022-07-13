@@ -76,7 +76,7 @@ class Model{
     }
     
     func getAllUsers(completion:@escaping ([User])->Void){
-        
+        UserDao.deleteAllUsers()
         firebaseModel.getAllUsers(){
             users in
             UserDao.createUsers(users: users)
@@ -102,7 +102,7 @@ class Model{
     }
     
     func getAllPosts(completion:@escaping ([Post])->Void){
-        
+        PostDao.deleteAllPosts()
         firebaseModel.getAllPosts(){
             posts in
             PostDao.createPosts(posts: posts)
@@ -125,10 +125,6 @@ class Model{
             completion()
             Model.postDataNotification.post()
         }
-    }
-    
-    func deleteAllCorePosts(completion: @escaping ()->Void){
-        PostDao.deleteAllPosts()
     }
     
     func deletePost(id:String, completion: @escaping ()->Void){

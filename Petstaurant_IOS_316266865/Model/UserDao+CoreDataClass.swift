@@ -136,4 +136,26 @@ public class UserDao: NSManagedObject {
             return
         }
     }
+    
+    
+    static func deleteAllUsers(){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<UserDao> = UserDao.fetchRequest()
+            let usersDao = try context.fetch(fetchRequest)
+            if(usersDao.count>0){
+                for uDao in usersDao{
+                    context.delete(uDao)
+                }
+                try context.save()
+            }
+            
+            return
+        }catch let error as NSError{
+            print("users delete core error \(error) \(error.userInfo)")
+            return
+        }
+    }
 }

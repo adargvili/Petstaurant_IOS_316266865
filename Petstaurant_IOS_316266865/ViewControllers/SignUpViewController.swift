@@ -19,7 +19,6 @@ class SignUpViewController: UIViewController {
     var users = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        Model.instance.deleteAllCorePosts {}
         Model.instance.getAllUsers(){
             users in
             self.users = users
