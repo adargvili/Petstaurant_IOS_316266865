@@ -134,7 +134,7 @@ class ModelFirebase{
     
     
     func getAllPosts(completion:@escaping ([Post])->Void){
-        db.collection("posts").getDocuments() { (querySnapshot, err) in
+        db.collection("posts").order(by: "timestamp", descending: true).getDocuments() { (querySnapshot, err) in
             var posts = [Post]()
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -149,8 +149,9 @@ class ModelFirebase{
     }
     
     func savePostOnDB(post:Post, completion:@escaping ()->Void){
-        db.collection("posts").document(post.id!).setData(
-            post.toJson())
+        var p = post.toJson()
+        p["timestamp"] = FieldValue.serverTimestamp()
+        db.collection("posts").document(post.id!).setData(p)
         { err in
             if let err = err {
                 print("Error saving document: \(err)")
