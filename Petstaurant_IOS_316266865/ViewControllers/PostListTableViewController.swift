@@ -70,12 +70,12 @@ class PostListTableViewController: UITableViewController {
                 postCell?.avatarImage?.kf.setImage(with: url, options:[.forceRefresh]){ result in
                     switch result {
                     case .success(_):
-                        print()
                         postCell?.cellActivityIndicator.isHidden=true
                     case .failure(_):
-                        self.popupAlert(title: "Post List Table Error",
-                                        message: "Failed to upload post image",
-                                        actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return
+                        postCell?.cellActivityIndicator.isHidden=true
+//                        self.popupAlert(title: "Post List Table Error",
+//                                        message: "Failed to upload post image",
+//                                        actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return
                     }
                 }
             }else{
