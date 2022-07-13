@@ -105,12 +105,13 @@ class ModelFirebase{
             let user = User()
             if let err = err {
                 print("Error getting documents: \(err)")
-                completion(user)
+                
             } else {
                 for document in querySnapshot!.documents {
                     let user = User.FromJson(json: document.data())
-                    completion(user)}
+                }
             }
+            completion(user)
         }
     }
     
@@ -121,14 +122,13 @@ class ModelFirebase{
             var users = [User]()
             if let err = err {
                 print("Error getting documents: \(err)")
-                completion(users)
             } else {
                 for document in querySnapshot!.documents {
                     let user = User.FromJson(json: document.data())
                     users.append(user)
                 }
-                completion(users)
             }
+            completion(users)
         }
     }
     
@@ -138,14 +138,13 @@ class ModelFirebase{
             var posts = [Post]()
             if let err = err {
                 print("Error getting documents: \(err)")
-                completion(posts)
             } else {
                 for document in querySnapshot!.documents {
                     let post = Post.FromJson(json: document.data())
                     posts.append(post)
                 }
-                completion(posts)
             }
+            completion(posts)
         }
     }
     
@@ -183,12 +182,12 @@ class ModelFirebase{
         db.collection("posts").whereField("id", isEqualTo: id).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
-                completion()
             } else {
                 for document in querySnapshot!.documents {
                     document.reference.delete()
                 }
             }
+            completion()
         }
         
     }
