@@ -39,19 +39,13 @@ class ViewController: UIViewController , MySegueProtocol {
     }
     
     private func configureItems(){
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "person.circle"),
             style:.done,
             target: self,
             action: #selector(logoutAction)
         )
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "gear"),
-            style:.done,
-            target: self,
-            action: #selector(settings)
-        )
+
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor.black
@@ -64,9 +58,6 @@ class ViewController: UIViewController , MySegueProtocol {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpViewController
         self.navigationController?.setViewControllers([resultViewController], animated: true)
-    }
-    
-    @objc fileprivate func settings(){
     }
     
 }
