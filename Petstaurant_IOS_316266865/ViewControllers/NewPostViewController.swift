@@ -28,8 +28,10 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
         let post = Post(uid: String(UserDefaults.standard.string(forKey: "uid")!) , postDescription: postDescriptionInput.text!, postTitle: postTitleInput.text!,postImage: "")
         Model.instance.savePostOnDB(post: post){}
         if let image = selectedImage{
+            self.startLoading()
             Model.instance.uploadImage(name: post.id!, image: image) { url in
                 Model.instance.updatePostOnDB(id: post.id!, key: "postImage", value: url){
+                    self.stopLoading()
                     let viewController = self.navigationController?.parent as! ViewController
                     viewController.removeSubViews()
                     viewController.performSegue(withIdentifier: "postListSegue", sender: self)

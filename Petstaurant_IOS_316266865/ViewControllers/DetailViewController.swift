@@ -101,8 +101,10 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate & 
                                       value: postTitleLabel.text!){}
         
         if let image = selectedImage{
+            self.startLoading()
             Model.instance.uploadImage(name: post?.id ?? "", image: image) { url in
                 Model.instance.updatePostOnDB(id: (self.post?.id)!, key: "postImage", value: url){
+                    self.stopLoading()
                     let viewController = self.navigationController?.parent as! ViewController
                     viewController.removeSubViews()
                     viewController.performSegue(withIdentifier: "postListSegue", sender: self)

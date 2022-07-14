@@ -82,5 +82,28 @@ extension UIViewController {
         }
         self.present(alert, animated: true, completion: nil)
     }
+    
+    static let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
+        func startLoading() {
+            let activityIndicator = UIViewController.activityIndicator
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = .large
+            DispatchQueue.main.async {
+                self.view.addSubview(activityIndicator)
+            }
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+        }
+
+        func stopLoading() {
+            let activityIndicator = UIViewController.activityIndicator
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+            }
+            UIApplication.shared.endIgnoringInteractionEvents()
+          }
 }
 
