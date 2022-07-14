@@ -37,14 +37,20 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
             Model.instance.uploadImage(name: String(UserDefaults.standard.string(forKey: "uid")!), image: image) { url in
                 Model.instance.updateUserOnDB(uid: String(UserDefaults.standard.string(forKey: "uid")!),
                                               key: "profileImageUrl",
-                                              value: url){}
+                                              value: url){
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+                    self.navigationController?.pushViewController(resultViewController, animated: true)
+                    return
+                }
             }
         }
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
-        self.navigationController?.pushViewController(resultViewController, animated: true)
-        return
+        else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let resultViewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+            self.navigationController?.pushViewController(resultViewController, animated: true)
+            return
+        }
     }
     
     

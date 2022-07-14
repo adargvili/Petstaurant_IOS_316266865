@@ -29,12 +29,18 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate &
         Model.instance.savePostOnDB(post: post){}
         if let image = selectedImage{
             Model.instance.uploadImage(name: post.id!, image: image) { url in
-                Model.instance.updatePostOnDB(id: post.id!, key: "postImage", value: url){}
+                Model.instance.updatePostOnDB(id: post.id!, key: "postImage", value: url){
+                    let viewController = self.navigationController?.parent as! ViewController
+                    viewController.removeSubViews()
+                    viewController.performSegue(withIdentifier: "postListSegue", sender: self)
+                }
             }
         }
-        let viewController = self.navigationController?.parent as! ViewController
-        viewController.removeSubViews()
-        viewController.performSegue(withIdentifier: "postListSegue", sender: self)
+        else{
+            let viewController = self.navigationController?.parent as! ViewController
+            viewController.removeSubViews()
+            viewController.performSegue(withIdentifier: "postListSegue", sender: self)
+        }
     }
     @IBAction func xBtn(_ sender: UIButton) {
         postDescriptionInput.text = ""
