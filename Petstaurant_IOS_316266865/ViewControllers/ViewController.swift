@@ -90,6 +90,7 @@ extension UIViewController {
             activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
             activityIndicator.style = .large
+            activityIndicator.color = .black
             DispatchQueue.main.async {
                 self.view.addSubview(activityIndicator)
             }

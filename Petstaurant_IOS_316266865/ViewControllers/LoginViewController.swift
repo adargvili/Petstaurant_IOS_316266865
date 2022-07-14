@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         Model.instance.tfBorderColor(textField: emailLoginTextField){}
         Model.instance.tfBorderColor(textField: passwordLoginTextField){}
         

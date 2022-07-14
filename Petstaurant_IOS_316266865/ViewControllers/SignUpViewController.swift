@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController {
     var users = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         Model.instance.getAllUsers(){
             users in
             self.users = users

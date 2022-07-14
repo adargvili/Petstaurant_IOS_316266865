@@ -15,6 +15,7 @@ class AboutViewController: UIViewController {
     @IBOutlet var aboutLabel: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         view.backgroundColor = .white
         Model.instance.txtViewBorderColor(textView: aboutLabel){}
         aboutLabel.isEditable = false

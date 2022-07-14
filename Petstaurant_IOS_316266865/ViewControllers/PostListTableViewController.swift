@@ -31,6 +31,7 @@ class PostListTableViewController: UITableViewController {
     var row = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Refresh My Feed")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
