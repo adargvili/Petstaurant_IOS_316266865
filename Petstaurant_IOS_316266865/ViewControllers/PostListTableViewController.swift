@@ -59,6 +59,7 @@ class PostListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
+        postCell?.avatarImage.image = nil
         postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
         Model.instance.getCoreUser(uid:posts[indexPath.row].uid!){
             user in
@@ -74,9 +75,6 @@ class PostListTableViewController: UITableViewController {
                         postCell?.cellActivityIndicator.isHidden=true
                     case .failure(_):
                         postCell?.cellActivityIndicator.isHidden=true
-//                        self.popupAlert(title: "Post List Table Error",
-//                                        message: "Failed to upload post image",
-//                                        actionTitles: ["OK"], actions:[{action1 in},{action2 in}, nil]);return
                     }
                 }
             }else{
