@@ -38,6 +38,11 @@ class PostTableViewCell: UITableViewCell {
         avatarImage.layer.masksToBounds=true
         avatarImage.layer.cornerRadius=avatarImage.bounds.width/2
     }
+    
+    override func prepareForReuse() {
+       super.prepareForReuse()
+        avatarImage.image = nil
+     }
 
 }
 

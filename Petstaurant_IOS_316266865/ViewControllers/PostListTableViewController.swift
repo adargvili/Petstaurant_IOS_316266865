@@ -60,10 +60,14 @@ class PostListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
         postCell?.avatarImage.image = nil
+        postCell?.avatarImage?.kf.cancelDownloadTask()
         postCell?.postTitle = posts[indexPath.row].postTitle ?? ""
         Model.instance.getCoreUser(uid:posts[indexPath.row].uid!){
             user in
             let u = user
+            if u.id == nil{
+                return
+            }
             postCell?.postUserName = u.userName ?? ""
             if u.profileImageUrl != "", let urlStr = u.profileImageUrl {
                 postCell?.cellActivityIndicator.isHidden=false
